@@ -1,0 +1,5 @@
+id,change_type,removed,added,line_number,related_id
+1,replace,if(pready_out == 1) begin,if(pready_in == 1) begin,,
+2,replace,pready_out    <= 0;,pready_out    <= 1;,,
+3,replace,if((pready_in == 1) && (pready_out == 0)) begin,if((pready_in == 0) && (pready_out == 1)) begin,,
+

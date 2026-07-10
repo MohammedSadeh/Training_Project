@@ -1,0 +1,36 @@
+id,change_type,removed,added,line_number,related_id
+1,replace,overflow_intr_sig <= (next_count == MAX_VALUE) && (mode[2] == 1);,overflow_intr_sig <= (next_count == MAX_VALUE) || (mode[2] == 1);,,Logic could wrongly trigger overflow
+2,replace,underflow_intr_sig <= (next_count == 0) && (mode[2] == 0);,underflow_intr_sig <= (next_count == 0) || (mode[2] == 0);,,Underflow might incorrectly fire
+3,replace,"wrap_sig                 <= (next_count == MAX_VALUE && mode[2]==1) ||
+                                        (next_count == 0         && mode[2]==0);",wrap_sig                 <= (next_count == MAX_VALUE && mode[2]==0) || (next_count == 0 && mode[2]==1);,,Wrap logic reversed for modes
+4,replace,next_count<= next_count +  (mode[2] == 1 ? 1 : -1);,next_count<= next_count +  (mode[2] == 1 ? -1 : 1);,,Increment/decrement swapped
+5,replace,wrap_intr_sig  <= next_count == main_load_val;,wrap_intr_sig <= next_count != main_load_val;,,"Wrap interrupt condition inverted"
+6,replace,wrap_intr_sig            <= 0;,wrap_intr_sig            <= 1;,,"Wrap interrupt wrongly reset"
+7,replace,next_count     <= (mode[2] == 1 ? 0 : MAX_VALUE);,next_count     <= (mode[2] == 1 ? 0 : MAX_VALUE);,,Next count swapped for mode
+8,replace,next_count     <= next_count+(mode[2] == 1 ? 1 : -1);,next_count     <= next_count+(mode[2] == 1 ? 2 : -2);,,Step size doubled incorrectly
+9,replace,wrap_sig       <= 1;,wrap_sig       <= 0;,,"Wrap signal incorrectly cleared"
+10,replace,prev_main_load_wrap <= 1;,prev_main_load_wrap <= 0;,,"Previous main wrap not updated"
+11,replace,prev_secondary_load_wrap <= 1;,prev_secondary_load_wrap <= 0;,,"Previous secondary wrap not updated"
+12,replace,wrap_intr_sig            <= 0;,wrap_intr_sig            <= 1;,,"Wrap interrupt wrongly forced"
+13,replace,count        <= next_count;,count        <= next_count+1;,,"Count incremented wrongly during load"
+14,replace,prev_count <= count;,prev_count <= count+1;,,"Previous count updated incorrectly"
+15,replace,cycles_count            <= cycles_count+1;,cycles_count <= cycles_count-1;,,"Cycle counting decrements instead of increment"
+16,replace,overflow_intr_sig        <= 0;,overflow_intr_sig        <= 1;,,"Overflow cleared incorrectly"
+17,replace,underflow_intr_sig       <= 0;,underflow_intr_sig       <= 1;,,"Underflow cleared incorrectly"
+18,replace,wrap_intr_sig            <= 0;,wrap_intr_sig            <= 1;,,"Wrap interrupt forced during cycle"
+19,replace,region_changed_intr_sig  <= 0;,region_changed_intr_sig  <= 1;,,"Region changed interrupt wrongly set"
+20,replace,next_count <= main_load_val;,next_count <= secondary_load_val;,,"Load value incorrectly assigned"
+21,replace,prev_enable <= 1;,prev_enable <= 0;,,"Previous enable flipped incorrectly"
+22,replace,prev_mode <= mode;,prev_mode <= ~mode;,,"Mode saved inverted"
+23,replace,wrap_sig   <= 0;,wrap_sig   <= 1;,,"Wrap signal wrongly set during counting"
+24,replace,next_count<= next_count +  (mode[2] == 1 ? 1 : -1);,next_count <= next_count +  (mode[2] == 1 ? 0 : 0);,,Counter does not advance
+25,replace,prev_main_load_wrap <= 1;,prev_main_load_wrap <= prev_main_load_wrap;,,"Previous main wrap not updated"
+26,replace,prev_secondary_load_wrap <= 1;,prev_secondary_load_wrap <= prev_secondary_load_wrap;,,"Secondary wrap not updated"
+27,replace,wrap_intr_sig            <= 0;,wrap_intr_sig <= prev_enable;,,"Wrap intr tied to prev_enable wrongly"
+28,replace,count      <= next_count;,count        <= next_count-1;,,"Count decremented wrongly"
+29,replace,prev_count <= count;,prev_count <= next_count;,,"Prev count updated incorrectly"
+30,replace,region_changed_intr_sig <= 0;,region_changed_intr_sig <= 1;,,"Region changed interrupt stuck high"
+31,replace,cycles_count <= 0;,cycles_count <= number_of_cycles_val;,,"Cycles count wrongly reset to max"
+32,replace,overflow_intr_sig        <= 0;,overflow_intr_sig        <= 1;,,"Overflow interrupt always set"
+33,replace,underflow_intr_sig       <= 0;,underflow_intr_sig       <= 1;,,"Underflow interrupt always set"
+

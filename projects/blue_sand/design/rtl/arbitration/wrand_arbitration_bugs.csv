@@ -1,0 +1,12 @@
+id,change_type,removed,added,line_number,related_id
+1,replace,assign count                  = pull_ready[0]&pull_ready[1];,assign count                  = pull_ready[0]|pull_ready[1];,,Logic miscalculation with OR
+2,replace,assign interconnection_tmp[1] = 1;,assign interconnection_tmp[1] = 0;,,"Fixed interconnection wrongly set"
+3,replace,assign interconnection_tmp[0] = pull_ready[0] == 0;,assign interconnection_tmp[0] = pull_ready[0] == 1;,,"Interconnection inversion"
+4,replace,assign tmp_choosen[1]         = random<threshold_val;,assign tmp_choosen[1]         = random>threshold_val;,,"Threshold comparison inverted"
+5,replace,assign intra                  = interconnection_tmp[tmp_choosen[count]];,assign intra                  = interconnection_tmp[tmp_choosen[count]^1];,,"Intra index wrongly modified"
+6,replace,assign req_out                = req_in[intra];,assign req_out                = req_in[intra^1];,,"Request output selection flipped"
+7,replace,assign push                   = pull_ready[intra];,assign push                   = pull_ready[intra^1];,,"Push logic misapplied"
+8,replace,assign pull[0]                = push == 1&&push_ready == 1&&(intra == 0);,assign pull[0]                = push == 0&&push_ready == 1&&(intra == 0);,,"Pull0 condition inverted"
+9,replace,assign pull[1]                = push == 1&&push_ready == 1&&(intra == 1);,assign pull[1]                = push == 1&&push_ready == 0&&(intra == 1);,,"Pull1 readiness misused"
+10,replace,assign tmp_choosen[0]         = 0;,assign tmp_choosen[0]         = 1;,,"First tmp_choosen wrongly initialized"
+

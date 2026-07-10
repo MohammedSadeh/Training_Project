@@ -1,0 +1,22 @@
+id,change_type,removed,added,line_number,related_id
+1,replace,"x_sin_counter <= x_sin_counter + spwm_n_step +1;","x_sin_counter <= x_sin_counter + spwm_n_step;",,Counter increment off by one
+2,replace,"x_sin_counter <= spwm_n_step +1;","x_sin_counter <= spwm_n_step;",,Reset after overflow incorrect
+3,replace,"addrs_bus <= x_sin;","addrs_bus <= x_sin + 1;",,Address bus offset error
+4,replace,"sin_fx    <= data_bus;","sin_fx    <= data_bus - 1;",,Data inversion mistake
+5,replace,"addrs_bus <= THIRD_QUART - x_sin;","addrs_bus <= THIRD_QUART + x_sin;",,Address calculation reversed
+6,replace,"sin_fx    <= FIRST_TERM - data_bus;","sin_fx    <= FIRST_TERM + data_bus;",,SPWM signal inverted
+7,replace,"addrs_bus <= x_sin - THIRD_QUART;","addrs_bus <= THIRD_QUART - x_sin;",,Address calculation error
+8,replace,"trng_d_step_counter <= trng_d_step_counter + 1;","trng_d_step_counter <= trng_d_step_counter - 1;",,TRNG step counter decremented wrongly
+9,replace,"x_trng               <= x_trng + trng_n_step+1;","x_trng               <= x_trng + trng_n_step;",,TRNG increment off by one
+10,replace,"trng_decimal_counter <= trng_n_step_decimal + trng_decimal_counter;","trng_decimal_counter <= trng_decimal_counter - trng_n_step_decimal;",,TRNG decimal accumulation wrong
+11,replace,"trng_fx <= trng_fx + trng_n_step_value + (trng_n_step_decimal > ~trng_decimal_counter);","trng_fx <= trng_fx - trng_n_step_value - (trng_n_step_decimal > ~trng_decimal_counter);",,TRNG value updated incorrectly
+12,replace,"trng_fx <= trng_fx - trng_n_step_value - (trng_n_step_decimal > ~trng_decimal_counter);","trng_fx <= trng_fx + trng_n_step_value + (trng_n_step_decimal > ~trng_decimal_counter);",,TRNG decrement inverted
+13,replace,"x_trng               <= 0;","x_trng               <= 1;",,TRNG reset off by one
+14,replace,"current_state_trng   <= ~current_state_trng;","current_state_trng   <= current_state_trng;",,TRNG state not toggled
+15,replace,"trng_fx <= FIRST_TERM -1;","trng_fx <= FIRST_TERM;",,TRNG last value off by one
+16,replace,"trng_fx <= 0;","trng_fx <= 1;",,TRNG last value initialization wrong
+17,replace,"port_sig                                = en_sig[2]==1? spwm_sig : pwm_sig;","port_sig                                = en_sig[2]==0? spwm_sig : pwm_sig;",,Port selection inverted
+18,replace,"pwm_enable                              = en_sig[0]==1 && en_sig[2]==0;","pwm_enable                              = en_sig[0]==0 && en_sig[2]==0;",,PWM enable logic error
+19,replace,"spwm_enable                             = en_sig[0]==1 && en_sig[2]==1 && boot_done==1;","spwm_enable                             = en_sig[0]==1 && en_sig[2]==0 && boot_done==1;",,SPWM enable condition inverted
+20,replace,"fixed_range_flag = (quarter_en[0]==1) && (x_sin >= fixed_range_angle);","fixed_range_flag = (quarter_en[0]==0) && (x_sin >= fixed_range_angle);",,Fixed range flag logic error
+

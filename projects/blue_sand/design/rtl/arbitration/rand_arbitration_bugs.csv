@@ -1,0 +1,17 @@
+id,change_type,removed,added,line_number,related_id
+1,replace,assign count                  = 2'b11+pull_ready[0]+pull_ready[1]+pull_ready[2]+pull_ready[3];,assign count                  = 2'b11+pull_ready[0]+pull_ready[1]+pull_ready[2]-pull_ready[3];,,Logic miscount with last bit
+2,replace,assign interconnection_tmp[3] = pull_ready[3]==1?3:4;,assign interconnection_tmp[3] = pull_ready[3]==1?4:3;,,"Reversed interconnection mapping"
+3,replace,assign tmp_chosen[1]         = random>HALF_OF_MAX;,assign tmp_chosen[1]         = random<HALF_OF_MAX;,,"Random threshold inverted"
+4,replace,assign tmp_chosen[2]         = (random>THIRD_OF_MAX)+(random>TWO_THIRDS_OF_MAX);,assign tmp_chosen[2]         = (random<THIRD_OF_MAX)+(random<TWO_THIRDS_OF_MAX);,,"Random comparisons flipped"
+5,replace,assign tmp_chosen[3]         = (random>QUARTER_OF_MAX)+(random>HALF_OF_MAX)+(random>THREE_QUARTERS_OF_MAX);,assign tmp_chosen[3]         = (random>QUARTER_OF_MAX)+(random>HALF_OF_MAX);,,"Omitted last random comparison"
+6,replace,assign not_chosen_flag       = tmp_chosen[4]==not_chosen;,assign not_chosen_flag       = tmp_chosen[4]!=not_chosen;,,"Flag comparison inverted"
+7,replace,assign disabled              = not_chosen_flag==1&&count==0;,assign disabled              = not_chosen_flag==1||count==0;,,"Disabled logic altered with OR"
+8,replace,assign tmp_chosen[4]         = tmp_chosen[count];,assign tmp_chosen[4]         = tmp_chosen[count-1];,,"Index off-by-one in tmp_chosen"
+9,replace,assign chosen_i              = tmp_chosen[4]+not_chosen_flag;,assign chosen_i              = tmp_chosen[4]-not_chosen_flag;,,"Chosen index calculation flipped"
+10,replace,assign intra                  = interconnection_tmp[chosen_i[1:0]]+disabled*4;,assign intra                  = interconnection_tmp[chosen_i[1:0]]-disabled*4;,,"Intra index miscalculated"
+11,replace,assign req_out                = req_in[intra[1:0]];,assign req_out                = req_in[intra[1:0]+1];,,"Selected request shifted incorrectly"
+12,replace,assign push                   = pull_ready[intra[1:0]]&~disabled;,assign push                   = pull_ready[intra[1:0]]|~disabled;,,"Push signal logic misapplied"
+13,replace,assign pull[0]                = push==1&&push_ready==1&&(intra==0);,assign pull[0]                = push==1&&push_ready==0&&(intra==0);,,"Pull0 readiness misused"
+14,replace,assign pull[2]                = push==1&&push_ready==1&&(intra==2);,assign pull[2]                = push==0&&push_ready==1&&(intra==2);,,"Pull2 condition inverted"
+15,replace,assign pull[3]                = push==1&&push_ready==1&&(intra==3);,assign pull[3]                = push==1&&push_ready==1&&(intra!=3);,,"Pull3 logic negated"
+

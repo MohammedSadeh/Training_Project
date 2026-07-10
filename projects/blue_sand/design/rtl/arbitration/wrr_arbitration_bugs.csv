@@ -1,0 +1,17 @@
+id,change_type,removed,added,line_number,related_id
+1,replace,counters <= 0;,counters <= 1;,,Initial counter wrongly set
+2,replace,if(occupancies[i] == 0 || ( occupancies[i]==1 && pull[i]==1 && pull[i]==1) ) begin,if(occupancies[i] == 0 && ( occupancies[i]==1 || pull[i]==0 ) ) begin,,Occupancy logic inverted
+3,replace,counters[i] <= level_weights[0];,counters[i] <= level_weights[1];,,"Level weight assignment shifted"
+4,replace,counters[i] <= level_weights[1];,counters[i] <= level_weights[2];,,"Level weight assignment shifted"
+5,replace,counters[i] <= level_weights[2];,counters[i] <= level_weights[0];,,"Level weight wrapped incorrectly"
+6,replace,if(counters[max_i] != 0&&push_ready  == 1) begin,if(counters[max_i] == 0||push_ready  == 0) begin,,Push condition inverted
+7,replace,counters[max_i] <= counters[max_i]-1;,counters[max_i] <= counters[max_i]+1;,,"Counter decrement wrongly implemented"
+8,replace,assign max_tmp[0] = ( counters[1]                   > counters[0]          && (pull_ready[1] == 1)                 ) || pull_ready[0] == 0;,assign max_tmp[0] = ( counters[1]                   < counters[0]          && (pull_ready[1] == 1)                 ) || pull_ready[0] == 0;,,"Max tmp0 comparison inverted"
+9,replace,assign max_tmp[1] = ( counters[3]                   > counters[2]          && (pull_ready[3] == 1)                 ) || pull_ready[2] == 0;,assign max_tmp[1] = ( counters[3]                   < counters[2]          && (pull_ready[3] == 1)                 ) || pull_ready[2] == 0;,,"Max tmp1 comparison inverted"
+10,replace,assign max_i[1]   = ( counters[ 2'h2 | max_tmp[1] ] > counters[max_tmp[0]] && (pull_ready[ 2'h2 | max_tmp[1] ]==1) ) || pull_ready[max_tmp[0]] == 0;,assign max_i[1]   = ( counters[ 2'h2 | max_tmp[1] ] < counters[max_tmp[0]] && (pull_ready[ 2'h2 | max_tmp[1] ]==1) ) || pull_ready[max_tmp[0]] == 0;,,"Max index logic reversed"
+11,replace,assign max_i[0]   = max_tmp[max_i[1]];,assign max_i[0]   = max_tmp[0];,,"Max index selection simplified incorrectly"
+12,replace,assign req_out    = req_in[max_i];,assign req_out    = req_in[max_i^1];,,"Req_out selection flipped"
+13,replace,assign push       = pull_ready[max_i];,assign push       = pull_ready[max_i^1];,,"Push selection flipped"
+14,replace,assign pull[push_idx] = (push == 1) && (push_ready == 1) && (max_i == push_idx);,assign pull[push_idx] = (push == 0) && (push_ready == 1) && (max_i != push_idx);,,"Pull assignment logic inverted"
+15,replace,for(int i = 0;i<4;i++) begin,for(int i = 3;i>=0;i--) begin,,Loop order reversed
+

@@ -1,0 +1,146 @@
+{
+    "_vcs_DPI_package": [
+        "_vcs_DPI_package",
+        "uM9F1",
+        "module",
+        1
+    ],
+    "vcs_paramclassrepository": [
+        "vcs_paramclassrepository",
+        "hEeZs",
+        "module",
+        2
+    ],
+    "_vcs_unit__4007560064": [
+        "_vcs_unit__4007560064",
+        "YZSex",
+        "module",
+        3
+    ],
+    "std": [
+        "std",
+        "reYIK",
+        "module",
+        4
+    ],
+    "uvm_pkg": [
+        "uvm_pkg",
+        "zr7M1",
+        "module",
+        5
+    ],
+    "_vcs_msglog": [
+        "_vcs_msglog",
+        "zQBzV",
+        "module",
+        6
+    ],
+    "uvm_custom_install_recording": [
+        "uvm_custom_install_recording",
+        "nhiwz",
+        "module",
+        7
+    ],
+    "uvm_custom_install_verdi_recording": [
+        "uvm_custom_install_verdi_recording",
+        "EbjT3",
+        "module",
+        8
+    ],
+    "arbitration_pkg": [
+        "arbitration_pkg",
+        "Z3s7t",
+        "module",
+        9
+    ],
+    "clk_muxing_unit": [
+        "clk_muxing_unit",
+        "yICuq",
+        "module",
+        10
+    ],
+    "lfsr_0000": [
+        "lfsr_0000",
+        "U8tdE",
+        "module",
+        11
+    ],
+    "wrr_arbitration_0000": [
+        "wrr_arbitration_0000",
+        "hp8Me",
+        "module",
+        12
+    ],
+    "rand_arbitration": [
+        "rand_arbitration",
+        "F5njf",
+        "module",
+        13
+    ],
+    "pwm_port": [
+        "pwm_port",
+        "qFVK4",
+        "module",
+        14
+    ],
+    "top_pwm_0000": [
+        "top_pwm_0000",
+        "yS61U",
+        "module",
+        15
+    ],
+    "counter": [
+        "counter",
+        "MQn6b",
+        "module",
+        16
+    ],
+    "interrupt_summary": [
+        "interrupt_summary",
+        "BpSNh",
+        "module",
+        17
+    ],
+    "reg_file": [
+        "reg_file",
+        "h6AbR",
+        "module",
+        18
+    ],
+    "apb_if": [
+        "apb_if",
+        "d9vZk",
+        "module",
+        20
+    ],
+    "counter_if": [
+        "counter_if",
+        "hPbB1",
+        "module",
+        21
+    ],
+    "env_pkg": [
+        "env_pkg",
+        "NU54h",
+        "module",
+        25
+    ],
+    "tests_pkg": [
+        "tests_pkg",
+        "EaWgM",
+        "module",
+        22
+    ],
+    "tb_top": [
+        "tb_top",
+        "jdPWL",
+        "module",
+        23
+    ],
+    "...MASTER...": [
+        "SIM",
+        "amcQw",
+        "module",
+        24
+    ]
+}

@@ -1,0 +1,12 @@
+id,change_type,removed,added,line_number,related_id
+1,replace,"assign port_sig = en_sig & ( polarity ^ ~current_state_pwm);","assign port_sig = en_sig & ( polarity ^ current_state_pwm);",,Port signal inversion
+2,replace,"assign pwm_period   = ((freq_resolution+1)<<prescalar[3:0]);","assign pwm_period   = ((freq_resolution)<<prescalar[3:0]);",,PWM period off by one
+3,replace,"assign time_on_sig  =((pwm_period*duty_cycle)>>8);","assign time_on_sig  =((pwm_period*duty_cycle)>>7);",,Duty cycle mis-scaled
+4,replace,"assign time_off_sig = pwm_period-time_on_sig;","assign time_off_sig = pwm_period+time_on_sig;",,Time off miscalculation
+5,replace,"pulse_counter_sig<=1;","pulse_counter_sig<=0;",,Pulse counter reset wrong
+6,replace,"current_state_pwm<=0;","current_state_pwm<=1;",,Initial state wrong
+7,replace,"if(pulse_counter_sig< (current_state_pwm==1?time_on_sig:time_off_sig)) begin","if(pulse_counter_sig<= (current_state_pwm==1?time_on_sig:time_off_sig)) begin",,Counter comparison incorrect
+8,replace,"pulse_counter_sig<=pulse_counter_sig + 1 ;","pulse_counter_sig<=pulse_counter_sig - 1 ;",,Counter increment inverted
+9,replace,"current_state_pwm <=~current_state_pwm;","current_state_pwm <= current_state_pwm;",,State toggling broken
+10,replace,"pulse_counter_sig<=1 ;","pulse_counter_sig<=2 ;",,Pulse counter reset off by one
+

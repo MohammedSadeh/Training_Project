@@ -1,0 +1,267 @@
+Command: /home/st102/Training/outputs/blue_sand/simv +UVM_TESTNAME=free_running_mode_test -l /home/st102/Training/outputs/blue_sand/free_running_mode_test/run.log +ntb_random_seed=972856 +UVM_VERBOSITY=UVM_MEDIUM +vcs+lic+wait -ucli -i /home/st102/Training/outputs/blue_sand/free_running_mode_test/dump_config.ucli
+Chronologic VCS simulator copyright 1991-2022
+Contains Synopsys proprietary information.
+Compiler version T-2022.06-SP2_Full64; Runtime version T-2022.06-SP2_Full64;  Jul  9 18:36 2026
+UVM_INFO /usr/synopsys/vcs/T-2022.06-SP2/etc/uvm-1.2/base/uvm_root.svh(402) @ 0: reporter [UVM/RELNOTES] 
+----------------------------------------------------------------
+UVM-1.2.Synopsys
+(C) 2007-2014 Mentor Graphics Corporation
+(C) 2007-2014 Cadence Design Systems, Inc.
+(C) 2006-2014 Synopsys, Inc.
+(C) 2011-2013 Cypress Semiconductor Corp.
+(C) 2013-2014 NVIDIA Corporation
+----------------------------------------------------------------
+
+  ***********       IMPORTANT RELEASE NOTES         ************
+
+  You are using a version of the UVM library that has been compiled
+  with `UVM_NO_DEPRECATED undefined.
+  See http://www.eda.org/svdb/view.php?id=3313 for more details.
+
+  You are using a version of the UVM library that has been compiled
+  with `UVM_OBJECT_DO_NOT_NEED_CONSTRUCTOR undefined.
+  See http://www.eda.org/svdb/view.php?id=3770 for more details.
+
+      (Specify +UVM_NO_RELNOTES to turn off this notice)
+
+ucli% config timebase 1NS
+1ns
+ucli% dump -file waveform.fsdb -type FSDB
+*Verdi* Loading libsscore_vcs202206.so
+FSDB Dumper for VCS, Release Verdi_T-2022.06-SP2, Linux x86_64/64bit, 11/22/2022
+(C) 1996 - 2022 by Synopsys, Inc.
+*Verdi* FSDB WARNING: The FSDB file already exists. Overwriting the FSDB file may crash the programs that are using this file.
+*Verdi* : Create FSDB file 'waveform.fsdb'
+FSDB0
+ucli% dump -add / -depth 0 -fid FSDB0 -fsdb_opt +all
+*Verdi* : Begin traversing the scope (/), layer (0).
+*Verdi* : Enable +all dumping.
+*Verdi* : End of traversing.
+*Verdi* : Flush all FSDB Files at 0 ns.
+1
+ucli% run
+UVM_INFO @ 0: reporter [RNTST] Running test free_running_mode_test...
+UVM_INFO /usr/synopsys/vcs/T-2022.06-SP2/etc/uvm-1.2/base/uvm_root.svh(589) @ 0: reporter [UVMTOP] UVM testbench topology:
+----------------------------------------------------------------
+Name                       Type                      Size  Value
+----------------------------------------------------------------
+uvm_test_top               free_running_mode_test    -     @352 
+  my_env                   env                       -     @365 
+    agt_apb                agent_apb                 -     @375 
+      drv0                 driver_apb                -     @541 
+        rsp_port           uvm_analysis_port         -     @560 
+        seq_item_port      uvm_seq_item_pull_port    -     @550 
+      mon0                 monitor_apb               -     @570 
+        mon_analysis_port  uvm_analysis_port         -     @580 
+      seqr0                uvm_sequencer             -     @404 
+        rsp_export         uvm_analysis_export       -     @413 
+        seq_item_export    uvm_seq_item_pull_imp     -     @531 
+        arbitration_queue  array                     0     -    
+        lock_queue         array                     0     -    
+        num_last_reqs      integral                  32    'd1  
+        num_last_rsps      integral                  32    'd1  
+    agt_counter            agent_counter             -     @384 
+      mon0                 monitor_counter           -     @597 
+        mon_analysis_port  uvm_analysis_port         -     @606 
+    scbd_counter           scoreboard_counter        -     @393 
+      data_export_apb      uvm_analysis_imp_apb      -     @617 
+      data_export_counter  uvm_analysis_imp_counter  -     @627 
+----------------------------------------------------------------
+
+UVM_INFO /home/st102/Training/projects/blue_sand/verif/sv/driver_apb.sv(29) @ 0: uvm_test_top.my_env.agt_apb.drv0 [drv0] Waiting for data from sequencer
+UVM_INFO /home/st102/Training/projects/blue_sand/verif/seq/base_seq.sv(34) @ 490: uvm_test_top.my_env.agt_apb.seqr0@@my_seq [SEQ] Disable Counter Transaction
+UVM_INFO /home/st102/Training/projects/blue_sand/verif/sv/driver_apb.sv(29) @ 690: uvm_test_top.my_env.agt_apb.drv0 [drv0] Waiting for data from sequencer
+UVM_INFO /home/st102/Training/projects/blue_sand/verif/sv/driver_apb.sv(29) @ 890: uvm_test_top.my_env.agt_apb.drv0 [drv0] Waiting for data from sequencer
+UVM_INFO /home/st102/Training/projects/blue_sand/verif/sv/driver_apb.sv(29) @ 1090: uvm_test_top.my_env.agt_apb.drv0 [drv0] Waiting for data from sequencer
+UVM_INFO /home/st102/Training/projects/blue_sand/verif/sv/driver_apb.sv(29) @ 1250: uvm_test_top.my_env.agt_apb.drv0 [drv0] Waiting for data from sequencer
+UVM_INFO /home/st102/Training/projects/blue_sand/verif/sv/driver_apb.sv(29) @ 1430: uvm_test_top.my_env.agt_apb.drv0 [drv0] Waiting for data from sequencer
+UVM_INFO /home/st102/Training/projects/blue_sand/verif/sv/driver_apb.sv(29) @ 1590: uvm_test_top.my_env.agt_apb.drv0 [drv0] Waiting for data from sequencer
+UVM_INFO /home/st102/Training/projects/blue_sand/verif/seq/base_seq.sv(132) @ 1590: uvm_test_top.my_env.agt_apb.seqr0@@my_seq [SEQ] Generate new item
+UVM_INFO /home/st102/Training/projects/blue_sand/verif/seq/base_seq.sv(133) @ 1590: uvm_test_top.my_env.agt_apb.seqr0@@my_seq [SEQ] Seq send PKT to Driver: ADDR = 6, pwrite = 1, pwdata = 5032a88e, prdata = 0, pslverr = 0, delay = 5
+UVM_INFO /home/st102/Training/projects/blue_sand/verif/sv/driver_apb.sv(29) @ 1810: uvm_test_top.my_env.agt_apb.drv0 [drv0] Waiting for data from sequencer
+UVM_INFO /home/st102/Training/projects/blue_sand/verif/seq/base_seq.sv(132) @ 1810: uvm_test_top.my_env.agt_apb.seqr0@@my_seq [SEQ] Generate new item
+UVM_INFO /home/st102/Training/projects/blue_sand/verif/seq/base_seq.sv(133) @ 1810: uvm_test_top.my_env.agt_apb.seqr0@@my_seq [SEQ] Seq send PKT to Driver: ADDR = 5, pwrite = 0, pwdata = 34d7ab8, prdata = 0, pslverr = 0, delay = 0
+UVM_ERROR /home/st102/Training/projects/blue_sand/verif/sv/scoreboard_counter.sv(77) @ 1930: uvm_test_top.my_env.scbd_counter [SCB] Mismatch [READ] @0x5: exp = 0x0 act = 0x88
+UVM_INFO /home/st102/Training/projects/blue_sand/verif/sv/driver_apb.sv(29) @ 1930: uvm_test_top.my_env.agt_apb.drv0 [drv0] Waiting for data from sequencer
+UVM_INFO /home/st102/Training/projects/blue_sand/verif/seq/base_seq.sv(132) @ 1930: uvm_test_top.my_env.agt_apb.seqr0@@my_seq [SEQ] Generate new item
+UVM_INFO /home/st102/Training/projects/blue_sand/verif/seq/base_seq.sv(133) @ 1930: uvm_test_top.my_env.agt_apb.seqr0@@my_seq [SEQ] Seq send PKT to Driver: ADDR = 1, pwrite = 1, pwdata = c5a4c5dc, prdata = 0, pslverr = 0, delay = 2
+UVM_INFO /home/st102/Training/projects/blue_sand/verif/sv/driver_apb.sv(29) @ 2090: uvm_test_top.my_env.agt_apb.drv0 [drv0] Waiting for data from sequencer
+UVM_INFO /home/st102/Training/projects/blue_sand/verif/seq/base_seq.sv(132) @ 2090: uvm_test_top.my_env.agt_apb.seqr0@@my_seq [SEQ] Generate new item
+UVM_INFO /home/st102/Training/projects/blue_sand/verif/seq/base_seq.sv(133) @ 2090: uvm_test_top.my_env.agt_apb.seqr0@@my_seq [SEQ] Seq send PKT to Driver: ADDR = 0, pwrite = 0, pwdata = b18a911d, prdata = 0, pslverr = 0, delay = 4
+UVM_INFO /home/st102/Training/projects/blue_sand/verif/sv/driver_apb.sv(29) @ 2290: uvm_test_top.my_env.agt_apb.drv0 [drv0] Waiting for data from sequencer
+UVM_INFO /home/st102/Training/projects/blue_sand/verif/seq/base_seq.sv(132) @ 2290: uvm_test_top.my_env.agt_apb.seqr0@@my_seq [SEQ] Generate new item
+UVM_INFO /home/st102/Training/projects/blue_sand/verif/seq/base_seq.sv(133) @ 2290: uvm_test_top.my_env.agt_apb.seqr0@@my_seq [SEQ] Seq send PKT to Driver: ADDR = 1, pwrite = 1, pwdata = f388a2aa, prdata = 0, pslverr = 0, delay = 1
+UVM_INFO /home/st102/Training/projects/blue_sand/verif/sv/driver_apb.sv(29) @ 2430: uvm_test_top.my_env.agt_apb.drv0 [drv0] Waiting for data from sequencer
+UVM_INFO /home/st102/Training/projects/blue_sand/verif/seq/base_seq.sv(132) @ 2430: uvm_test_top.my_env.agt_apb.seqr0@@my_seq [SEQ] Generate new item
+UVM_INFO /home/st102/Training/projects/blue_sand/verif/seq/base_seq.sv(133) @ 2430: uvm_test_top.my_env.agt_apb.seqr0@@my_seq [SEQ] Seq send PKT to Driver: ADDR = 1, pwrite = 0, pwdata = 13503225, prdata = 0, pslverr = 0, delay = 2
+UVM_INFO /home/st102/Training/projects/blue_sand/verif/sv/driver_apb.sv(29) @ 2590: uvm_test_top.my_env.agt_apb.drv0 [drv0] Waiting for data from sequencer
+UVM_INFO /home/st102/Training/projects/blue_sand/verif/seq/base_seq.sv(132) @ 2590: uvm_test_top.my_env.agt_apb.seqr0@@my_seq [SEQ] Generate new item
+UVM_INFO /home/st102/Training/projects/blue_sand/verif/seq/base_seq.sv(133) @ 2590: uvm_test_top.my_env.agt_apb.seqr0@@my_seq [SEQ] Seq send PKT to Driver: ADDR = 6, pwrite = 0, pwdata = f4cebbf5, prdata = 0, pslverr = 0, delay = 4
+UVM_INFO /home/st102/Training/projects/blue_sand/verif/sv/driver_apb.sv(29) @ 2790: uvm_test_top.my_env.agt_apb.drv0 [drv0] Waiting for data from sequencer
+UVM_INFO /home/st102/Training/projects/blue_sand/verif/seq/base_seq.sv(132) @ 2790: uvm_test_top.my_env.agt_apb.seqr0@@my_seq [SEQ] Generate new item
+UVM_INFO /home/st102/Training/projects/blue_sand/verif/seq/base_seq.sv(133) @ 2790: uvm_test_top.my_env.agt_apb.seqr0@@my_seq [SEQ] Seq send PKT to Driver: ADDR = 0, pwrite = 1, pwdata = 28c86bd4, prdata = 0, pslverr = 0, delay = 0
+UVM_INFO /home/st102/Training/projects/blue_sand/verif/sv/driver_apb.sv(29) @ 2910: uvm_test_top.my_env.agt_apb.drv0 [drv0] Waiting for data from sequencer
+UVM_INFO /home/st102/Training/projects/blue_sand/verif/seq/base_seq.sv(132) @ 2910: uvm_test_top.my_env.agt_apb.seqr0@@my_seq [SEQ] Generate new item
+UVM_INFO /home/st102/Training/projects/blue_sand/verif/seq/base_seq.sv(133) @ 2910: uvm_test_top.my_env.agt_apb.seqr0@@my_seq [SEQ] Seq send PKT to Driver: ADDR = 1, pwrite = 0, pwdata = c8e06c66, prdata = 0, pslverr = 0, delay = 4
+UVM_INFO /home/st102/Training/projects/blue_sand/verif/sv/driver_apb.sv(29) @ 3110: uvm_test_top.my_env.agt_apb.drv0 [drv0] Waiting for data from sequencer
+UVM_INFO /home/st102/Training/projects/blue_sand/verif/seq/base_seq.sv(132) @ 3110: uvm_test_top.my_env.agt_apb.seqr0@@my_seq [SEQ] Generate new item
+UVM_INFO /home/st102/Training/projects/blue_sand/verif/seq/base_seq.sv(133) @ 3110: uvm_test_top.my_env.agt_apb.seqr0@@my_seq [SEQ] Seq send PKT to Driver: ADDR = 4, pwrite = 0, pwdata = 7a8ce161, prdata = 0, pslverr = 0, delay = 1
+UVM_INFO /home/st102/Training/projects/blue_sand/verif/sv/driver_apb.sv(29) @ 3250: uvm_test_top.my_env.agt_apb.drv0 [drv0] Waiting for data from sequencer
+UVM_INFO /home/st102/Training/projects/blue_sand/verif/seq/base_seq.sv(132) @ 3250: uvm_test_top.my_env.agt_apb.seqr0@@my_seq [SEQ] Generate new item
+UVM_INFO /home/st102/Training/projects/blue_sand/verif/seq/base_seq.sv(133) @ 3250: uvm_test_top.my_env.agt_apb.seqr0@@my_seq [SEQ] Seq send PKT to Driver: ADDR = 5, pwrite = 0, pwdata = e9c7b1d1, prdata = 0, pslverr = 0, delay = 1
+UVM_ERROR /home/st102/Training/projects/blue_sand/verif/sv/scoreboard_counter.sv(77) @ 3370: uvm_test_top.my_env.scbd_counter [SCB] Mismatch [READ] @0x5: exp = 0x0 act = 0xb6
+UVM_INFO /home/st102/Training/projects/blue_sand/verif/sv/driver_apb.sv(29) @ 3390: uvm_test_top.my_env.agt_apb.drv0 [drv0] Waiting for data from sequencer
+UVM_INFO /home/st102/Training/projects/blue_sand/verif/seq/base_seq.sv(132) @ 3390: uvm_test_top.my_env.agt_apb.seqr0@@my_seq [SEQ] Generate new item
+UVM_INFO /home/st102/Training/projects/blue_sand/verif/seq/base_seq.sv(133) @ 3390: uvm_test_top.my_env.agt_apb.seqr0@@my_seq [SEQ] Seq send PKT to Driver: ADDR = 3, pwrite = 0, pwdata = 88ff0e5, prdata = 0, pslverr = 0, delay = 1
+UVM_INFO /home/st102/Training/projects/blue_sand/verif/sv/driver_apb.sv(29) @ 3530: uvm_test_top.my_env.agt_apb.drv0 [drv0] Waiting for data from sequencer
+UVM_INFO /home/st102/Training/projects/blue_sand/verif/seq/base_seq.sv(132) @ 3530: uvm_test_top.my_env.agt_apb.seqr0@@my_seq [SEQ] Generate new item
+UVM_INFO /home/st102/Training/projects/blue_sand/verif/seq/base_seq.sv(133) @ 3530: uvm_test_top.my_env.agt_apb.seqr0@@my_seq [SEQ] Seq send PKT to Driver: ADDR = 4, pwrite = 1, pwdata = 475a4ba, prdata = 0, pslverr = 0, delay = 2
+UVM_INFO /home/st102/Training/projects/blue_sand/verif/sv/driver_apb.sv(29) @ 3690: uvm_test_top.my_env.agt_apb.drv0 [drv0] Waiting for data from sequencer
+UVM_INFO /home/st102/Training/projects/blue_sand/verif/seq/base_seq.sv(132) @ 3690: uvm_test_top.my_env.agt_apb.seqr0@@my_seq [SEQ] Generate new item
+UVM_INFO /home/st102/Training/projects/blue_sand/verif/seq/base_seq.sv(133) @ 3690: uvm_test_top.my_env.agt_apb.seqr0@@my_seq [SEQ] Seq send PKT to Driver: ADDR = 4, pwrite = 0, pwdata = 55d0f8e9, prdata = 0, pslverr = 0, delay = 0
+UVM_INFO /home/st102/Training/projects/blue_sand/verif/sv/driver_apb.sv(29) @ 3810: uvm_test_top.my_env.agt_apb.drv0 [drv0] Waiting for data from sequencer
+UVM_INFO /home/st102/Training/projects/blue_sand/verif/seq/base_seq.sv(132) @ 3810: uvm_test_top.my_env.agt_apb.seqr0@@my_seq [SEQ] Generate new item
+UVM_INFO /home/st102/Training/projects/blue_sand/verif/seq/base_seq.sv(133) @ 3810: uvm_test_top.my_env.agt_apb.seqr0@@my_seq [SEQ] Seq send PKT to Driver: ADDR = 3, pwrite = 1, pwdata = dd390cf3, prdata = 0, pslverr = 0, delay = 1
+UVM_INFO /home/st102/Training/projects/blue_sand/verif/sv/driver_apb.sv(29) @ 3950: uvm_test_top.my_env.agt_apb.drv0 [drv0] Waiting for data from sequencer
+UVM_INFO /home/st102/Training/projects/blue_sand/verif/seq/base_seq.sv(132) @ 3950: uvm_test_top.my_env.agt_apb.seqr0@@my_seq [SEQ] Generate new item
+UVM_INFO /home/st102/Training/projects/blue_sand/verif/seq/base_seq.sv(133) @ 3950: uvm_test_top.my_env.agt_apb.seqr0@@my_seq [SEQ] Seq send PKT to Driver: ADDR = 5, pwrite = 0, pwdata = c13ec418, prdata = 0, pslverr = 0, delay = 4
+UVM_ERROR /home/st102/Training/projects/blue_sand/verif/sv/scoreboard_counter.sv(77) @ 4070: uvm_test_top.my_env.scbd_counter [SCB] Mismatch [READ] @0x5: exp = 0x0 act = 0xb6
+UVM_INFO /home/st102/Training/projects/blue_sand/verif/sv/driver_apb.sv(29) @ 4150: uvm_test_top.my_env.agt_apb.drv0 [drv0] Waiting for data from sequencer
+UVM_INFO /home/st102/Training/projects/blue_sand/verif/seq/base_seq.sv(132) @ 4150: uvm_test_top.my_env.agt_apb.seqr0@@my_seq [SEQ] Generate new item
+UVM_INFO /home/st102/Training/projects/blue_sand/verif/seq/base_seq.sv(133) @ 4150: uvm_test_top.my_env.agt_apb.seqr0@@my_seq [SEQ] Seq send PKT to Driver: ADDR = 4, pwrite = 0, pwdata = 83aa5782, prdata = 0, pslverr = 0, delay = 2
+UVM_INFO /home/st102/Training/projects/blue_sand/verif/sv/driver_apb.sv(29) @ 4310: uvm_test_top.my_env.agt_apb.drv0 [drv0] Waiting for data from sequencer
+UVM_INFO /home/st102/Training/projects/blue_sand/verif/seq/base_seq.sv(132) @ 4310: uvm_test_top.my_env.agt_apb.seqr0@@my_seq [SEQ] Generate new item
+UVM_INFO /home/st102/Training/projects/blue_sand/verif/seq/base_seq.sv(133) @ 4310: uvm_test_top.my_env.agt_apb.seqr0@@my_seq [SEQ] Seq send PKT to Driver: ADDR = 5, pwrite = 1, pwdata = 65481a6, prdata = 0, pslverr = 0, delay = 0
+UVM_INFO /home/st102/Training/projects/blue_sand/verif/sv/driver_apb.sv(29) @ 4430: uvm_test_top.my_env.agt_apb.drv0 [drv0] Waiting for data from sequencer
+UVM_INFO /home/st102/Training/projects/blue_sand/verif/seq/base_seq.sv(132) @ 4430: uvm_test_top.my_env.agt_apb.seqr0@@my_seq [SEQ] Generate new item
+UVM_INFO /home/st102/Training/projects/blue_sand/verif/seq/base_seq.sv(133) @ 4430: uvm_test_top.my_env.agt_apb.seqr0@@my_seq [SEQ] Seq send PKT to Driver: ADDR = 3, pwrite = 0, pwdata = b8fcd2b5, prdata = 0, pslverr = 0, delay = 4
+UVM_INFO /home/st102/Training/projects/blue_sand/verif/sv/driver_apb.sv(29) @ 4630: uvm_test_top.my_env.agt_apb.drv0 [drv0] Waiting for data from sequencer
+UVM_INFO /home/st102/Training/projects/blue_sand/verif/seq/base_seq.sv(132) @ 4630: uvm_test_top.my_env.agt_apb.seqr0@@my_seq [SEQ] Generate new item
+UVM_INFO /home/st102/Training/projects/blue_sand/verif/seq/base_seq.sv(133) @ 4630: uvm_test_top.my_env.agt_apb.seqr0@@my_seq [SEQ] Seq send PKT to Driver: ADDR = 4, pwrite = 1, pwdata = ef26ead8, prdata = 0, pslverr = 0, delay = 0
+UVM_INFO /home/st102/Training/projects/blue_sand/verif/sv/driver_apb.sv(29) @ 4750: uvm_test_top.my_env.agt_apb.drv0 [drv0] Waiting for data from sequencer
+UVM_INFO /home/st102/Training/projects/blue_sand/verif/seq/base_seq.sv(132) @ 4750: uvm_test_top.my_env.agt_apb.seqr0@@my_seq [SEQ] Generate new item
+UVM_INFO /home/st102/Training/projects/blue_sand/verif/seq/base_seq.sv(133) @ 4750: uvm_test_top.my_env.agt_apb.seqr0@@my_seq [SEQ] Seq send PKT to Driver: ADDR = 1, pwrite = 1, pwdata = 53891c95, prdata = 0, pslverr = 0, delay = 1
+UVM_INFO /home/st102/Training/projects/blue_sand/verif/sv/driver_apb.sv(29) @ 4890: uvm_test_top.my_env.agt_apb.drv0 [drv0] Waiting for data from sequencer
+UVM_INFO /home/st102/Training/projects/blue_sand/verif/seq/base_seq.sv(132) @ 4890: uvm_test_top.my_env.agt_apb.seqr0@@my_seq [SEQ] Generate new item
+UVM_INFO /home/st102/Training/projects/blue_sand/verif/seq/base_seq.sv(133) @ 4890: uvm_test_top.my_env.agt_apb.seqr0@@my_seq [SEQ] Seq send PKT to Driver: ADDR = 0, pwrite = 0, pwdata = fbbc5198, prdata = 0, pslverr = 0, delay = 1
+UVM_INFO /home/st102/Training/projects/blue_sand/verif/sv/driver_apb.sv(29) @ 5030: uvm_test_top.my_env.agt_apb.drv0 [drv0] Waiting for data from sequencer
+UVM_INFO /home/st102/Training/projects/blue_sand/verif/seq/base_seq.sv(132) @ 5030: uvm_test_top.my_env.agt_apb.seqr0@@my_seq [SEQ] Generate new item
+UVM_INFO /home/st102/Training/projects/blue_sand/verif/seq/base_seq.sv(133) @ 5030: uvm_test_top.my_env.agt_apb.seqr0@@my_seq [SEQ] Seq send PKT to Driver: ADDR = 2, pwrite = 0, pwdata = facd5273, prdata = 0, pslverr = 0, delay = 5
+UVM_INFO /home/st102/Training/projects/blue_sand/verif/sv/driver_apb.sv(29) @ 5250: uvm_test_top.my_env.agt_apb.drv0 [drv0] Waiting for data from sequencer
+UVM_INFO /home/st102/Training/projects/blue_sand/verif/seq/base_seq.sv(132) @ 5250: uvm_test_top.my_env.agt_apb.seqr0@@my_seq [SEQ] Generate new item
+UVM_INFO /home/st102/Training/projects/blue_sand/verif/seq/base_seq.sv(133) @ 5250: uvm_test_top.my_env.agt_apb.seqr0@@my_seq [SEQ] Seq send PKT to Driver: ADDR = 1, pwrite = 0, pwdata = 9dfad736, prdata = 0, pslverr = 0, delay = 3
+UVM_INFO /home/st102/Training/projects/blue_sand/verif/sv/driver_apb.sv(29) @ 5430: uvm_test_top.my_env.agt_apb.drv0 [drv0] Waiting for data from sequencer
+UVM_INFO /home/st102/Training/projects/blue_sand/verif/seq/base_seq.sv(132) @ 5430: uvm_test_top.my_env.agt_apb.seqr0@@my_seq [SEQ] Generate new item
+UVM_INFO /home/st102/Training/projects/blue_sand/verif/seq/base_seq.sv(133) @ 5430: uvm_test_top.my_env.agt_apb.seqr0@@my_seq [SEQ] Seq send PKT to Driver: ADDR = 4, pwrite = 1, pwdata = f7331872, prdata = 0, pslverr = 0, delay = 0
+UVM_INFO /home/st102/Training/projects/blue_sand/verif/sv/driver_apb.sv(29) @ 5550: uvm_test_top.my_env.agt_apb.drv0 [drv0] Waiting for data from sequencer
+UVM_INFO /home/st102/Training/projects/blue_sand/verif/seq/base_seq.sv(132) @ 5550: uvm_test_top.my_env.agt_apb.seqr0@@my_seq [SEQ] Generate new item
+UVM_INFO /home/st102/Training/projects/blue_sand/verif/seq/base_seq.sv(133) @ 5550: uvm_test_top.my_env.agt_apb.seqr0@@my_seq [SEQ] Seq send PKT to Driver: ADDR = 5, pwrite = 1, pwdata = 2b25c574, prdata = 0, pslverr = 0, delay = 4
+UVM_INFO /home/st102/Training/projects/blue_sand/verif/sv/driver_apb.sv(29) @ 5750: uvm_test_top.my_env.agt_apb.drv0 [drv0] Waiting for data from sequencer
+UVM_INFO /home/st102/Training/projects/blue_sand/verif/seq/base_seq.sv(132) @ 5750: uvm_test_top.my_env.agt_apb.seqr0@@my_seq [SEQ] Generate new item
+UVM_INFO /home/st102/Training/projects/blue_sand/verif/seq/base_seq.sv(133) @ 5750: uvm_test_top.my_env.agt_apb.seqr0@@my_seq [SEQ] Seq send PKT to Driver: ADDR = 1, pwrite = 1, pwdata = 32c4e42e, prdata = 0, pslverr = 0, delay = 5
+UVM_INFO /home/st102/Training/projects/blue_sand/verif/sv/driver_apb.sv(29) @ 5970: uvm_test_top.my_env.agt_apb.drv0 [drv0] Waiting for data from sequencer
+UVM_INFO /home/st102/Training/projects/blue_sand/verif/seq/base_seq.sv(132) @ 5970: uvm_test_top.my_env.agt_apb.seqr0@@my_seq [SEQ] Generate new item
+UVM_INFO /home/st102/Training/projects/blue_sand/verif/seq/base_seq.sv(133) @ 5970: uvm_test_top.my_env.agt_apb.seqr0@@my_seq [SEQ] Seq send PKT to Driver: ADDR = 3, pwrite = 1, pwdata = 392733cc, prdata = 0, pslverr = 0, delay = 4
+UVM_INFO /home/st102/Training/projects/blue_sand/verif/sv/driver_apb.sv(29) @ 6170: uvm_test_top.my_env.agt_apb.drv0 [drv0] Waiting for data from sequencer
+UVM_INFO /home/st102/Training/projects/blue_sand/verif/seq/base_seq.sv(132) @ 6170: uvm_test_top.my_env.agt_apb.seqr0@@my_seq [SEQ] Generate new item
+UVM_INFO /home/st102/Training/projects/blue_sand/verif/seq/base_seq.sv(133) @ 6170: uvm_test_top.my_env.agt_apb.seqr0@@my_seq [SEQ] Seq send PKT to Driver: ADDR = 3, pwrite = 1, pwdata = a4f30c68, prdata = 0, pslverr = 0, delay = 1
+UVM_INFO /home/st102/Training/projects/blue_sand/verif/sv/driver_apb.sv(29) @ 6310: uvm_test_top.my_env.agt_apb.drv0 [drv0] Waiting for data from sequencer
+UVM_INFO /home/st102/Training/projects/blue_sand/verif/seq/base_seq.sv(132) @ 6310: uvm_test_top.my_env.agt_apb.seqr0@@my_seq [SEQ] Generate new item
+UVM_INFO /home/st102/Training/projects/blue_sand/verif/seq/base_seq.sv(133) @ 6310: uvm_test_top.my_env.agt_apb.seqr0@@my_seq [SEQ] Seq send PKT to Driver: ADDR = 6, pwrite = 0, pwdata = 1dab127b, prdata = 0, pslverr = 0, delay = 1
+UVM_INFO /home/st102/Training/projects/blue_sand/verif/sv/driver_apb.sv(29) @ 6450: uvm_test_top.my_env.agt_apb.drv0 [drv0] Waiting for data from sequencer
+UVM_INFO /home/st102/Training/projects/blue_sand/verif/seq/base_seq.sv(132) @ 6450: uvm_test_top.my_env.agt_apb.seqr0@@my_seq [SEQ] Generate new item
+UVM_INFO /home/st102/Training/projects/blue_sand/verif/seq/base_seq.sv(133) @ 6450: uvm_test_top.my_env.agt_apb.seqr0@@my_seq [SEQ] Seq send PKT to Driver: ADDR = 4, pwrite = 1, pwdata = d47f936b, prdata = 0, pslverr = 0, delay = 1
+UVM_INFO /home/st102/Training/projects/blue_sand/verif/sv/driver_apb.sv(29) @ 6590: uvm_test_top.my_env.agt_apb.drv0 [drv0] Waiting for data from sequencer
+UVM_INFO /home/st102/Training/projects/blue_sand/verif/seq/base_seq.sv(132) @ 6590: uvm_test_top.my_env.agt_apb.seqr0@@my_seq [SEQ] Generate new item
+UVM_INFO /home/st102/Training/projects/blue_sand/verif/seq/base_seq.sv(133) @ 6590: uvm_test_top.my_env.agt_apb.seqr0@@my_seq [SEQ] Seq send PKT to Driver: ADDR = 3, pwrite = 1, pwdata = c7a64fb4, prdata = 0, pslverr = 0, delay = 3
+UVM_INFO /home/st102/Training/projects/blue_sand/verif/sv/driver_apb.sv(29) @ 6770: uvm_test_top.my_env.agt_apb.drv0 [drv0] Waiting for data from sequencer
+UVM_INFO /home/st102/Training/projects/blue_sand/verif/seq/base_seq.sv(132) @ 6770: uvm_test_top.my_env.agt_apb.seqr0@@my_seq [SEQ] Generate new item
+UVM_INFO /home/st102/Training/projects/blue_sand/verif/seq/base_seq.sv(133) @ 6770: uvm_test_top.my_env.agt_apb.seqr0@@my_seq [SEQ] Seq send PKT to Driver: ADDR = 5, pwrite = 1, pwdata = 2b481008, prdata = 0, pslverr = 0, delay = 1
+UVM_INFO /home/st102/Training/projects/blue_sand/verif/sv/driver_apb.sv(29) @ 6910: uvm_test_top.my_env.agt_apb.drv0 [drv0] Waiting for data from sequencer
+UVM_INFO /home/st102/Training/projects/blue_sand/verif/seq/base_seq.sv(132) @ 6910: uvm_test_top.my_env.agt_apb.seqr0@@my_seq [SEQ] Generate new item
+UVM_INFO /home/st102/Training/projects/blue_sand/verif/seq/base_seq.sv(133) @ 6910: uvm_test_top.my_env.agt_apb.seqr0@@my_seq [SEQ] Seq send PKT to Driver: ADDR = 1, pwrite = 0, pwdata = f516fb61, prdata = 0, pslverr = 0, delay = 5
+UVM_INFO /home/st102/Training/projects/blue_sand/verif/sv/driver_apb.sv(29) @ 7130: uvm_test_top.my_env.agt_apb.drv0 [drv0] Waiting for data from sequencer
+UVM_INFO /home/st102/Training/projects/blue_sand/verif/seq/base_seq.sv(132) @ 7130: uvm_test_top.my_env.agt_apb.seqr0@@my_seq [SEQ] Generate new item
+UVM_INFO /home/st102/Training/projects/blue_sand/verif/seq/base_seq.sv(133) @ 7130: uvm_test_top.my_env.agt_apb.seqr0@@my_seq [SEQ] Seq send PKT to Driver: ADDR = 4, pwrite = 0, pwdata = be5c8945, prdata = 0, pslverr = 0, delay = 4
+UVM_INFO /home/st102/Training/projects/blue_sand/verif/sv/driver_apb.sv(29) @ 7330: uvm_test_top.my_env.agt_apb.drv0 [drv0] Waiting for data from sequencer
+UVM_INFO /home/st102/Training/projects/blue_sand/verif/seq/base_seq.sv(132) @ 7330: uvm_test_top.my_env.agt_apb.seqr0@@my_seq [SEQ] Generate new item
+UVM_INFO /home/st102/Training/projects/blue_sand/verif/seq/base_seq.sv(133) @ 7330: uvm_test_top.my_env.agt_apb.seqr0@@my_seq [SEQ] Seq send PKT to Driver: ADDR = 1, pwrite = 0, pwdata = 92c0f8a1, prdata = 0, pslverr = 0, delay = 4
+UVM_INFO /home/st102/Training/projects/blue_sand/verif/sv/driver_apb.sv(29) @ 7530: uvm_test_top.my_env.agt_apb.drv0 [drv0] Waiting for data from sequencer
+UVM_INFO /home/st102/Training/projects/blue_sand/verif/seq/base_seq.sv(132) @ 7530: uvm_test_top.my_env.agt_apb.seqr0@@my_seq [SEQ] Generate new item
+UVM_INFO /home/st102/Training/projects/blue_sand/verif/seq/base_seq.sv(133) @ 7530: uvm_test_top.my_env.agt_apb.seqr0@@my_seq [SEQ] Seq send PKT to Driver: ADDR = 5, pwrite = 0, pwdata = 83fe5aef, prdata = 0, pslverr = 0, delay = 4
+UVM_ERROR /home/st102/Training/projects/blue_sand/verif/sv/scoreboard_counter.sv(77) @ 7650: uvm_test_top.my_env.scbd_counter [SCB] Mismatch [READ] @0x5: exp = 0x0 act = 0x2e
+UVM_INFO /home/st102/Training/projects/blue_sand/verif/sv/driver_apb.sv(29) @ 7730: uvm_test_top.my_env.agt_apb.drv0 [drv0] Waiting for data from sequencer
+UVM_INFO /home/st102/Training/projects/blue_sand/verif/seq/base_seq.sv(132) @ 7730: uvm_test_top.my_env.agt_apb.seqr0@@my_seq [SEQ] Generate new item
+UVM_INFO /home/st102/Training/projects/blue_sand/verif/seq/base_seq.sv(133) @ 7730: uvm_test_top.my_env.agt_apb.seqr0@@my_seq [SEQ] Seq send PKT to Driver: ADDR = 1, pwrite = 1, pwdata = ddcb19a4, prdata = 0, pslverr = 0, delay = 2
+UVM_INFO /home/st102/Training/projects/blue_sand/verif/sv/driver_apb.sv(29) @ 7890: uvm_test_top.my_env.agt_apb.drv0 [drv0] Waiting for data from sequencer
+UVM_INFO /home/st102/Training/projects/blue_sand/verif/seq/base_seq.sv(132) @ 7890: uvm_test_top.my_env.agt_apb.seqr0@@my_seq [SEQ] Generate new item
+UVM_INFO /home/st102/Training/projects/blue_sand/verif/seq/base_seq.sv(133) @ 7890: uvm_test_top.my_env.agt_apb.seqr0@@my_seq [SEQ] Seq send PKT to Driver: ADDR = 3, pwrite = 0, pwdata = 993d5ef5, prdata = 0, pslverr = 0, delay = 4
+UVM_INFO /home/st102/Training/projects/blue_sand/verif/sv/driver_apb.sv(29) @ 8090: uvm_test_top.my_env.agt_apb.drv0 [drv0] Waiting for data from sequencer
+UVM_INFO /home/st102/Training/projects/blue_sand/verif/seq/base_seq.sv(132) @ 8090: uvm_test_top.my_env.agt_apb.seqr0@@my_seq [SEQ] Generate new item
+UVM_INFO /home/st102/Training/projects/blue_sand/verif/seq/base_seq.sv(133) @ 8090: uvm_test_top.my_env.agt_apb.seqr0@@my_seq [SEQ] Seq send PKT to Driver: ADDR = 2, pwrite = 1, pwdata = 450ce171, prdata = 0, pslverr = 0, delay = 3
+UVM_INFO /home/st102/Training/projects/blue_sand/verif/sv/driver_apb.sv(29) @ 8270: uvm_test_top.my_env.agt_apb.drv0 [drv0] Waiting for data from sequencer
+UVM_INFO /home/st102/Training/projects/blue_sand/verif/seq/base_seq.sv(132) @ 8270: uvm_test_top.my_env.agt_apb.seqr0@@my_seq [SEQ] Generate new item
+UVM_INFO /home/st102/Training/projects/blue_sand/verif/seq/base_seq.sv(133) @ 8270: uvm_test_top.my_env.agt_apb.seqr0@@my_seq [SEQ] Seq send PKT to Driver: ADDR = 2, pwrite = 0, pwdata = ed5604c5, prdata = 0, pslverr = 0, delay = 4
+UVM_INFO /home/st102/Training/projects/blue_sand/verif/sv/driver_apb.sv(29) @ 8470: uvm_test_top.my_env.agt_apb.drv0 [drv0] Waiting for data from sequencer
+UVM_INFO /home/st102/Training/projects/blue_sand/verif/seq/base_seq.sv(132) @ 8470: uvm_test_top.my_env.agt_apb.seqr0@@my_seq [SEQ] Generate new item
+UVM_INFO /home/st102/Training/projects/blue_sand/verif/seq/base_seq.sv(133) @ 8470: uvm_test_top.my_env.agt_apb.seqr0@@my_seq [SEQ] Seq send PKT to Driver: ADDR = 1, pwrite = 1, pwdata = 65eb9cd1, prdata = 0, pslverr = 0, delay = 2
+UVM_INFO /home/st102/Training/projects/blue_sand/verif/sv/driver_apb.sv(29) @ 8630: uvm_test_top.my_env.agt_apb.drv0 [drv0] Waiting for data from sequencer
+UVM_INFO /home/st102/Training/projects/blue_sand/verif/seq/base_seq.sv(132) @ 8630: uvm_test_top.my_env.agt_apb.seqr0@@my_seq [SEQ] Generate new item
+UVM_INFO /home/st102/Training/projects/blue_sand/verif/seq/base_seq.sv(133) @ 8630: uvm_test_top.my_env.agt_apb.seqr0@@my_seq [SEQ] Seq send PKT to Driver: ADDR = 1, pwrite = 1, pwdata = b4fd6eb7, prdata = 0, pslverr = 0, delay = 0
+UVM_INFO /home/st102/Training/projects/blue_sand/verif/sv/driver_apb.sv(29) @ 8750: uvm_test_top.my_env.agt_apb.drv0 [drv0] Waiting for data from sequencer
+UVM_INFO /home/st102/Training/projects/blue_sand/verif/seq/base_seq.sv(132) @ 8750: uvm_test_top.my_env.agt_apb.seqr0@@my_seq [SEQ] Generate new item
+UVM_INFO /home/st102/Training/projects/blue_sand/verif/seq/base_seq.sv(133) @ 8750: uvm_test_top.my_env.agt_apb.seqr0@@my_seq [SEQ] Seq send PKT to Driver: ADDR = 1, pwrite = 0, pwdata = 19f69677, prdata = 0, pslverr = 0, delay = 1
+UVM_INFO /home/st102/Training/projects/blue_sand/verif/sv/driver_apb.sv(29) @ 8890: uvm_test_top.my_env.agt_apb.drv0 [drv0] Waiting for data from sequencer
+UVM_INFO /home/st102/Training/projects/blue_sand/verif/seq/base_seq.sv(132) @ 8890: uvm_test_top.my_env.agt_apb.seqr0@@my_seq [SEQ] Generate new item
+UVM_INFO /home/st102/Training/projects/blue_sand/verif/seq/base_seq.sv(133) @ 8890: uvm_test_top.my_env.agt_apb.seqr0@@my_seq [SEQ] Seq send PKT to Driver: ADDR = 5, pwrite = 1, pwdata = 4967f79d, prdata = 0, pslverr = 0, delay = 5
+UVM_INFO /home/st102/Training/projects/blue_sand/verif/sv/driver_apb.sv(29) @ 9110: uvm_test_top.my_env.agt_apb.drv0 [drv0] Waiting for data from sequencer
+UVM_INFO /home/st102/Training/projects/blue_sand/verif/seq/base_seq.sv(132) @ 9110: uvm_test_top.my_env.agt_apb.seqr0@@my_seq [SEQ] Generate new item
+UVM_INFO /home/st102/Training/projects/blue_sand/verif/seq/base_seq.sv(133) @ 9110: uvm_test_top.my_env.agt_apb.seqr0@@my_seq [SEQ] Seq send PKT to Driver: ADDR = 3, pwrite = 0, pwdata = dfc84ae1, prdata = 0, pslverr = 0, delay = 0
+UVM_INFO /home/st102/Training/projects/blue_sand/verif/sv/driver_apb.sv(29) @ 9230: uvm_test_top.my_env.agt_apb.drv0 [drv0] Waiting for data from sequencer
+UVM_INFO /home/st102/Training/projects/blue_sand/verif/seq/base_seq.sv(132) @ 9230: uvm_test_top.my_env.agt_apb.seqr0@@my_seq [SEQ] Generate new item
+UVM_INFO /home/st102/Training/projects/blue_sand/verif/seq/base_seq.sv(133) @ 9230: uvm_test_top.my_env.agt_apb.seqr0@@my_seq [SEQ] Seq send PKT to Driver: ADDR = 4, pwrite = 0, pwdata = e52a33ba, prdata = 0, pslverr = 0, delay = 5
+UVM_INFO /home/st102/Training/projects/blue_sand/verif/sv/driver_apb.sv(29) @ 9450: uvm_test_top.my_env.agt_apb.drv0 [drv0] Waiting for data from sequencer
+UVM_INFO /home/st102/Training/projects/blue_sand/verif/seq/base_seq.sv(132) @ 9450: uvm_test_top.my_env.agt_apb.seqr0@@my_seq [SEQ] Generate new item
+UVM_INFO /home/st102/Training/projects/blue_sand/verif/seq/base_seq.sv(133) @ 9450: uvm_test_top.my_env.agt_apb.seqr0@@my_seq [SEQ] Seq send PKT to Driver: ADDR = 1, pwrite = 0, pwdata = ba7953f9, prdata = 0, pslverr = 0, delay = 2
+UVM_INFO /home/st102/Training/projects/blue_sand/verif/sv/driver_apb.sv(29) @ 9610: uvm_test_top.my_env.agt_apb.drv0 [drv0] Waiting for data from sequencer
+UVM_INFO /home/st102/Training/projects/blue_sand/verif/seq/base_seq.sv(132) @ 9610: uvm_test_top.my_env.agt_apb.seqr0@@my_seq [SEQ] Generate new item
+UVM_INFO /home/st102/Training/projects/blue_sand/verif/seq/base_seq.sv(133) @ 9610: uvm_test_top.my_env.agt_apb.seqr0@@my_seq [SEQ] Seq send PKT to Driver: ADDR = 3, pwrite = 1, pwdata = ac516ae3, prdata = 0, pslverr = 0, delay = 0
+UVM_INFO /home/st102/Training/projects/blue_sand/verif/sv/driver_apb.sv(29) @ 9730: uvm_test_top.my_env.agt_apb.drv0 [drv0] Waiting for data from sequencer
+UVM_INFO /home/st102/Training/projects/blue_sand/verif/seq/base_seq.sv(132) @ 9730: uvm_test_top.my_env.agt_apb.seqr0@@my_seq [SEQ] Generate new item
+UVM_INFO /home/st102/Training/projects/blue_sand/verif/seq/base_seq.sv(133) @ 9730: uvm_test_top.my_env.agt_apb.seqr0@@my_seq [SEQ] Seq send PKT to Driver: ADDR = 0, pwrite = 1, pwdata = a8ddfadc, prdata = 0, pslverr = 0, delay = 1
+UVM_INFO /home/st102/Training/projects/blue_sand/verif/sv/driver_apb.sv(29) @ 9870: uvm_test_top.my_env.agt_apb.drv0 [drv0] Waiting for data from sequencer
+UVM_INFO /home/st102/Training/projects/blue_sand/verif/seq/base_seq.sv(136) @ 9870: uvm_test_top.my_env.agt_apb.seqr0@@my_seq [SEQ] Done generation of 50 items
+UVM_INFO /usr/synopsys/vcs/T-2022.06-SP2/etc/uvm-1.2/base/uvm_report_catcher.svh(705) @ 9870: reporter [UVM/REPORT/CATCHER] 
+--- UVM Report catcher Summary ---
+
+
+Number of demoted UVM_FATAL reports  :    0
+Number of demoted UVM_ERROR reports  :    0
+Number of demoted UVM_WARNING reports:    0
+Number of caught UVM_FATAL reports   :    0
+Number of caught UVM_ERROR reports   :    0
+Number of caught UVM_WARNING reports :    0
+
+UVM_INFO /usr/synopsys/vcs/T-2022.06-SP2/etc/uvm-1.2/base/uvm_report_server.svh(904) @ 9870: reporter [UVM/REPORT/SERVER] 
+--- UVM Report Summary ---
+
+** Report counts by severity
+UVM_INFO :  163
+UVM_WARNING :    0
+UVM_ERROR :    4
+UVM_FATAL :    0
+** Report counts by id
+[RNTST]     1
+[SCB]     4
+[SEQ]   102
+[UVM/RELNOTES]     1
+[UVM/REPORT/CATCHER]     1
+[UVMTOP]     1
+[drv0]    57
+
+$finish called from file "/usr/synopsys/vcs/T-2022.06-SP2/etc/uvm-1.2/base/uvm_root.svh", line 527.
+$finish at simulation time                 9870
+           V C S   S i m u l a t i o n   R e p o r t 
+Time: 9870 ns
+CPU Time:      0.720 seconds;       Data structure size:   0.7Mb
+Thu Jul  9 18:36:49 2026

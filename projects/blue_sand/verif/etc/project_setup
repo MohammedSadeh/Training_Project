@@ -1,0 +1,4 @@
+export PROJECT="$PWD/projects/blue_sand"
+export PROJECT_VER="$PWD/projects/blue_sand/verif"
+export PROJECT_DESIGN="$PWD/projects/blue_sand/design"
+export OUTPUT="$PWD/outputs/blue_sand"
