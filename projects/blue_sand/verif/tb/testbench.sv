@@ -16,7 +16,7 @@ module tb_top;
   
   //dut instantiation with the interface
   wrapper_dut dut(._apb_if(_apb_if), ._counter_if(_counter_if));
-
+  assign _counter_if.presetn = _apb_if.presetn;
    initial begin
      //set the apb and counter interfaced in the config DB
      uvm_config_db #(virtual apb_if)::set (null, "*", "apb_vif", _apb_if);

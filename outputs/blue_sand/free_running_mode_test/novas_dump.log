@@ -88,7 +88,7 @@ VCS compile option:
  option[1]: +UVM_TESTNAME=free_running_mode_test
  option[2]: -l
  option[3]: /home/st102/Training/outputs/blue_sand/free_running_mode_test/run.log
- option[4]: +ntb_random_seed=972856
+ option[4]: +ntb_random_seed=981707
  option[5]: +UVM_VERBOSITY=UVM_MEDIUM
  option[6]: +vcs+lic+wait
  option[7]: -ucli
@@ -157,7 +157,7 @@ Limit information:
 cputime		unlimited
 filesize		unlimited
 datasize		unlimited
-stacksize		8309 kbytes
+stacksize		8235 kbytes
 coredumpsize		0 kbytes
 memoryuse		unlimited
 vmemoryuse		unlimited
@@ -187,14 +187,14 @@ LS_COLORS=rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd
 SNPSLMD_LICENSE_FILE=27020@synopsys.stbzu.edu
 CORETOOLS=/usr/synopsys/coretools/N-2017.12
 ICC_ROOT=/usr/synopsys/icc2/U-2022.12-SP5
-TMUX=/tmp/tmux-1403/default,51750,1
+TMUX=/tmp/tmux-1403/default,51750,0
 MAIL=/var/spool/mail/st102
 PATH=/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/var/lib/snapd/snap/bin:/usr/synopsys/scl/2021.03/linux64/bin:/usr/synopsys/vcs/T-2022.06-SP2/bin:/usr/synopsys/verdi/T-2022.06-SP2/bin:/usr/synopsys/icc/M-2016.12/bin:/usr/synopsys/syn/R-2020.09-SP5-5/bin:/usr/synopsys/coretools/N-2017.12/bin:/usr/synopsys/icc2/U-2022.12-SP5/bin:/usr/synopsys/starrc/U-2022.12-SP5/bin:/usr/synopsys/idq/R-2020.09-SP5-5/bin:/usr/synopsys/ufe_optional_spyglass-vcs/R-2020.12-SP2-12/SPYGLASS_HOME/bin:/usr/synopsys/syn/R-2020.09-SP5-5/bin:/usr/synopsys/txs/R-2020.09-SP5-5/bin:/usr/synopsys/fm/U-2022.12-SP1/bin:/usr/synopsys/prime/U-2022.12-SP5/bin:/bin:/usr/synopsys/fusioncompiler/U-2022.12-SP5/bin:/usr/synopsys/icvalidator/U-2022.12-SP3/bin:/usr/synopsys/lc/R-2020.09-SP5/bin:/usr/synopsys/hspice/W-2024.09-SP2/hspice/bin:/usr/synopsys/primewave/T-2022.06-SP2/bin:/usr/synopsys/customcompiler/T-2022.06-SP2/bin:/usr/synopsys/xa/W-2024.09-SP2/bin:/home/st102/.local/bin:/home/st102/bin:/usr/synopsys/scl/2021.03/linux64/bin:/usr/synopsys/vcs/T-2022.06-SP2/bin:/usr/synopsys/verdi/T-2022.06-SP2/bin:/usr/synopsys/icc/M-2016.12/bin:/usr/synopsys/syn/R-2020.09-SP5-5/bin:/usr/synopsys/coretools/N-2017.12/bin:/usr/synopsys/icc2/U-2022.12-SP5/bin:/usr/synopsys/starrc/U-2022.12-SP5/bin:/usr/synopsys/idq/R-2020.09-SP5-5/bin:/usr/synopsys/ufe_optional_spyglass-vcs/R-2020.12-SP2-12/SPYGLASS_HOME/bin:/usr/synopsys/syn/R-2020.09-SP5-5/bin:/usr/synopsys/txs/R-2020.09-SP5-5/bin:/usr/synopsys/fm/U-2022.12-SP1/bin:/usr/synopsys/prime/U-2022.12-SP5/bin:/bin:/usr/synopsys/fusioncompiler/U-2022.12-SP5/bin:/usr/synopsys/icvalidator/U-2022.12-SP3/bin:/usr/synopsys/lc/R-2020.09-SP5/bin:/usr/synopsys/hspice/W-2024.09-SP2/hspice/bin:/usr/synopsys/primewave/T-2022.06-SP2/bin:/usr/synopsys/customcompiler/T-2022.06-SP2/bin:/usr/synopsys/xa/W-2024.09-SP2/bin:/home/st102/.local/bin:/home/st102/bin
 VERDI_HOME=/usr/synopsys/verdi/T-2022.06-SP2
 PWD=/home/st102/Training/outputs/blue_sand/free_running_mode_test
 VCS_HOME=/usr/synopsys/vcs/T-2022.06-SP2
 LANG=en_US.UTF-8
-TMUX_PANE=%1
+TMUX_PANE=%0
 SYNOPSYS=/usr/synopsys/syn/R-2020.09-SP5-5
 HISTCONTROL=ignoredups
 SYN_INSTALLER=/usr/synopsys/Installer5_5
@@ -205,7 +205,7 @@ CDESIGNER=/usr/synopsys/syn/R-2020.09-SP5-5
 PROJECT_DESIGN=/home/st102/Training/projects/blue_sand/design
 LOGNAME=st102
 CVS_RSH=ssh
-SSH_CONNECTION=176.65.31.243 58353 172.16.2.21 22
+SSH_CONNECTION=176.65.31.243 54525 172.16.2.21 22
 XDG_DATA_DIRS=/home/st102/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share:/usr/share:/var/lib/snapd/desktop
 LESSOPEN=||/usr/bin/lesspipe.sh %s
 DISPLAY=127.0.0.1:11.0
@@ -225,15 +225,15 @@ argv[0]=/home/st102/Training/outputs/blue_sand/simv
 argv[1]=+UVM_TESTNAME=free_running_mode_test
 argv[2]=-l
 argv[3]=/home/st102/Training/outputs/blue_sand/free_running_mode_test/run.log
-argv[4]=+ntb_random_seed=972856
+argv[4]=+ntb_random_seed=981707
 argv[5]=+UVM_VERBOSITY=UVM_MEDIUM
 argv[6]=+vcs+lic+wait
 argv[7]=-ucli
 argv[8]=-i
 argv[9]=/home/st102/Training/outputs/blue_sand/free_running_mode_test/dump_config.ucli
 233 profile - 100
-          CPU/Mem usage: 0.070 sys,  0.390 user,  370.63M mem
-234 Elapsed time:    0:00:01    Thu Jul  9 18:36:49 2026
+          CPU/Mem usage: 0.060 sys,  0.370 user,  370.71M mem
+234 Elapsed time:    0:00:00    Wed Jul 15 17:31:40 2026
 235 User CPU time used: 0 seconds
 236 System CPU time used: 0 seconds
 237 pliAppInit
@@ -265,57 +265,57 @@ argv[9]=/home/st102/Training/outputs/blue_sand/free_running_mode_test/dump_confi
 263 *Verdi* : Enable +all dumping.
 264 *Verdi* : End of traversing.
 265 pliAppHDL_DumpVarComplete traverse var: profile - 
-          CPU/Mem usage: 0.090 sys,  0.480 user,  477.92M mem
-                   incr: 0.010 sys,  0.090 user,  15.50M mem
-                   accu: 0.010 sys,  0.090 user,  15.50M mem
-              accu incr: 0.010 sys,  0.090 user,  15.50M mem
+          CPU/Mem usage: 0.080 sys,  0.460 user,  478.01M mem
+                   incr: 0.020 sys,  0.090 user,  15.50M mem
+                   accu: 0.020 sys,  0.090 user,  15.50M mem
+              accu incr: 0.020 sys,  0.090 user,  15.50M mem
 
-          Count usage: 135249 var,  135022 idcode,  504 callback
-                 incr: 135249 var,  135022 idcode,  504 callback
-                 accu: 135249 var,  135022 idcode,  504 callback
-            accu incr: 135249 var,  135022 idcode,  504 callback
-266 Elapsed time:    0:00:01    Thu Jul  9 18:36:49 2026
+          Count usage: 135250 var,  135023 idcode,  505 callback
+                 incr: 135250 var,  135023 idcode,  505 callback
+                 accu: 135250 var,  135023 idcode,  505 callback
+            accu incr: 135250 var,  135023 idcode,  505 callback
+266 Elapsed time:    0:00:00    Wed Jul 15 17:31:40 2026
 267 User CPU time used: 0 seconds
 268 System CPU time used: 0 seconds
 269 pliAppHDL_DumpVarComplete: profile - 
-          CPU/Mem usage: 0.090 sys,  0.500 user,  485.38M mem
+          CPU/Mem usage: 0.080 sys,  0.480 user,  485.47M mem
                    incr: 0.000 sys,  0.020 user,  7.47M mem
-                   accu: 0.010 sys,  0.110 user,  22.96M mem
+                   accu: 0.020 sys,  0.110 user,  22.96M mem
               accu incr: 0.000 sys,  0.020 user,  7.47M mem
 
-          Count usage: 135249 var,  135022 idcode,  504 callback
+          Count usage: 135250 var,  135023 idcode,  505 callback
                  incr: 0 var,  0 idcode,  0 callback
-                 accu: 135249 var,  135022 idcode,  504 callback
+                 accu: 135250 var,  135023 idcode,  505 callback
             accu incr: 0 var,  0 idcode,  0 callback
-270 Elapsed time:    0:00:01    Thu Jul  9 18:36:49 2026
+270 Elapsed time:    0:00:00    Wed Jul 15 17:31:40 2026
 271 User CPU time used: 0 seconds
 272 System CPU time used: 0 seconds
 273 sps_tcl_fsdbDumpflush_vd_main at 0 : N/A(0)
 274 *Verdi* : Flush all FSDB Files at 0 ns.
-275 End of simulation at 9870
-276 Memory usage: 505.475 M
-277 Maximum resident set size: 141 MB
-278 Hard page faults: 3
-279 Soft page faults: 50994
-280 Elapsed time:    0:00:01    Thu Jul  9 18:36:49 2026
+275 End of simulation at 24570
+276 Memory usage: 505.565 M
+277 Maximum resident set size: 142 MB
+278 Hard page faults: 0
+279 Soft page faults: 51467
+280 Elapsed time:    0:00:01    Wed Jul 15 17:31:41 2026
 281 User CPU time used: 0 seconds
 282 System CPU time used: 0 seconds
 283 Begin FSDB profile info:
-284 FSDB Writer : bc1(5922) bcn(137689) mtf/stf(0/1)
-FSDB Writer elapsed time : flush(0.045641) io wait(0.000000) theadpool wait(0.000000)
+284 FSDB Writer : bc1(14641) bcn(144215) mtf/stf(0/1)
+FSDB Writer elapsed time : flush(0.046942) io wait(0.000000) theadpool wait(0.000000)
 FSDB Writer cpu time : MT Compression : 0
 285 End FSDB profile info
-286 FSDB closed. Name: waveform.fsdb Size: 62966
+286 FSDB closed. Name: waveform.fsdb Size: 76372
 287 Parallel profile     - ProducerThread:1 ConsumerThread:1 Buffer:64MB
-288                      - BlockUsed:1 Acquire:9408 BufferUsed:114024
+288                      - BlockUsed:1 Acquire:26122 BufferUsed:334534
 289                      - Flush:4 Expand:0 ProducerWait:0 ConsumerWait:0
-290                      - MainProducerTime:0.694184612 TotalConsumerTime:0.000000000
-291                      - ElapsedTime:0.268076000
-292 Producer   0 profile - BlockUsed:1 Acquire:9408 BufferUsed:114024
+290                      - MainProducerTime:0.856239853 TotalConsumerTime:0.000000000
+291                      - ElapsedTime:0.478099000
+292 Producer   0 profile - BlockUsed:1 Acquire:26122 BufferUsed:334534
 293 Consumer   0 profile - Affinity:-1 CPUTime:0.000000000 LifeTime:0.000000000 (-nan%)
-294                      - BlockUsed:1 Acquire:9408 BufferUsed:114024
+294                      - BlockUsed:1 Acquire:26122 BufferUsed:334534
 295 SimExit
-296 Elapsed time:    0:00:01    Thu Jul  9 18:36:49 2026
+296 Elapsed time:    0:00:01    Wed Jul 15 17:31:41 2026
 297 User CPU time used: 0 seconds
 298 System CPU time used: 0 seconds
 299 Sim process exit

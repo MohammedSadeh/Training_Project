@@ -48,7 +48,9 @@ class monitor_apb extends uvm_monitor;
            */
 
          // Send data object through the analysis port
-        mon_analysis_port.write (data_obj);
+        `uvm_info("MON_APB", $sformatf("@%0t Send PKT: ADDR = %0h, Prdata = %0h, PSleverr = %0b", $time, data_obj.paddr, data_obj.prdata, data_obj.pslverr), UVM_LOW)
+         mon_analysis_port.write (data_obj);
+        
       end
    endtask
 

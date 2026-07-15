@@ -13,4 +13,7 @@ class sequence_item_counter extends uvm_sequence_item;
     super.new(name);
   endfunction
     
+  function string conv2str();
+    return $sformatf("[Count Trans]: @%0t => count = %0d", $time, this.count);
+  endfunction
 endclass

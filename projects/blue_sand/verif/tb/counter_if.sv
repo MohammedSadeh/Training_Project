@@ -1,7 +1,7 @@
 interface counter_if(input pclk);
 
+    logic presetn;
   //parameter : COUNT_WIDTH is in parameters.sv file
-  
   logic [`COUNT_WIDTH-1:0] count;
   
   //modports to identify directions of the signals in the dut and the test

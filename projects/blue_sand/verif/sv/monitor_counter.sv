@@ -25,8 +25,8 @@ class monitor_counter extends uvm_monitor;
  
    virtual task run_phase (uvm_phase phase);
      super.run_phase(phase);
-      data_obj = sequence_item_counter::type_id::create ("data_obj", this);
       forever begin
+      data_obj = sequence_item_counter::type_id::create ("data_obj", this);
         monitor_item(data_obj);
 
          // Sample functional coverage if required. Data packet class is assumed
@@ -37,6 +37,7 @@ class monitor_counter extends uvm_monitor;
            */
 
          // Send data object through the analysis port
+         `uvm_info("MON_COUNT", $sformatf("@%0t : Send Act count = 0X%0h", $time, data_obj.count), UVM_LOW)
          mon_analysis_port.write (data_obj);
       end
    endtask
@@ -44,6 +45,7 @@ class monitor_counter extends uvm_monitor;
   virtual task monitor_item(ref sequence_item_counter data_obj);
 	//monitoring the output here
     @(posedge vif.pclk);
+    data_obj.count = vif.count;
   endtask
 
 endclass

@@ -1,0 +1,9 @@
+{"vcs1":{"timestamp_begin":1784120792.310717836, "rt":9.10, "ut":9.56, "st":0.55}}
+{"vcselab":{"timestamp_begin":1784120801.480356991, "rt":0.39, "ut":0.30, "st":0.10}}
+{"link":{"timestamp_begin":1784120801.935927691, "rt":0.60, "ut":0.42, "st":0.20}}
+{"SNPS_VCS_INTERNAL_ROOT_START_TIME": 1784120791.790443290}
+{"VCS_COMP_START_TIME": 1784120791.790443290}
+{"VCS_COMP_END_TIME": 1784120802.675719590}
+{"VCS_USER_OPTIONS": "-f /home/st102/Training/projects/blue_sand/verif/lib/lib.f -o /home/st102/Training/outputs/blue_sand/simv -full64 -sverilog -ntb_opts uvm-1.2 -l /home/st102/Training/outputs/blue_sand/compile.log -timescale=1ns/1ns +vcs+lic+wait +vcs+flush+all -kdb +error+5000 -lca -debug_access+all"}
+{"vcs1": {"peak_mem": 493584}}
+{"stitch_vcselab": {"peak_mem": 218612}}

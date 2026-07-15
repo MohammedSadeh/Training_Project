@@ -232,8 +232,8 @@ argv[7]=-ucli
 argv[8]=-i
 argv[9]=/home/st102/Training/outputs/blue_sand/reg_access_test/dump_config.ucli
 233 profile - 100
-          CPU/Mem usage: 0.070 sys,  0.370 user,  370.53M mem
-234 Elapsed time:    0:00:01    Thu Jul  9 17:10:38 2026
+          CPU/Mem usage: 0.080 sys,  0.410 user,  370.67M mem
+234 Elapsed time:    0:00:01    Wed Jul 15 11:08:34 2026
 235 User CPU time used: 0 seconds
 236 System CPU time used: 0 seconds
 237 pliAppInit
@@ -265,57 +265,57 @@ argv[9]=/home/st102/Training/outputs/blue_sand/reg_access_test/dump_config.ucli
 263 *Verdi* : Enable +all dumping.
 264 *Verdi* : End of traversing.
 265 pliAppHDL_DumpVarComplete traverse var: profile - 
-          CPU/Mem usage: 0.090 sys,  0.460 user,  477.86M mem
-                   incr: 0.010 sys,  0.090 user,  15.50M mem
-                   accu: 0.010 sys,  0.090 user,  15.50M mem
-              accu incr: 0.010 sys,  0.090 user,  15.50M mem
+          CPU/Mem usage: 0.090 sys,  0.500 user,  478.09M mem
+                   incr: 0.010 sys,  0.080 user,  15.59M mem
+                   accu: 0.010 sys,  0.080 user,  15.59M mem
+              accu incr: 0.010 sys,  0.080 user,  15.59M mem
 
-          Count usage: 135249 var,  135022 idcode,  504 callback
-                 incr: 135249 var,  135022 idcode,  504 callback
-                 accu: 135249 var,  135022 idcode,  504 callback
-            accu incr: 135249 var,  135022 idcode,  504 callback
-266 Elapsed time:    0:00:01    Thu Jul  9 17:10:38 2026
+          Count usage: 135250 var,  135023 idcode,  505 callback
+                 incr: 135250 var,  135023 idcode,  505 callback
+                 accu: 135250 var,  135023 idcode,  505 callback
+            accu incr: 135250 var,  135023 idcode,  505 callback
+266 Elapsed time:    0:00:01    Wed Jul 15 11:08:34 2026
 267 User CPU time used: 0 seconds
 268 System CPU time used: 0 seconds
 269 pliAppHDL_DumpVarComplete: profile - 
-          CPU/Mem usage: 0.100 sys,  0.480 user,  485.33M mem
-                   incr: 0.010 sys,  0.020 user,  7.47M mem
-                   accu: 0.020 sys,  0.110 user,  22.96M mem
-              accu incr: 0.010 sys,  0.020 user,  7.47M mem
+          CPU/Mem usage: 0.090 sys,  0.530 user,  485.56M mem
+                   incr: 0.000 sys,  0.030 user,  7.48M mem
+                   accu: 0.010 sys,  0.110 user,  23.06M mem
+              accu incr: 0.000 sys,  0.030 user,  7.48M mem
 
-          Count usage: 135249 var,  135022 idcode,  504 callback
+          Count usage: 135250 var,  135023 idcode,  505 callback
                  incr: 0 var,  0 idcode,  0 callback
-                 accu: 135249 var,  135022 idcode,  504 callback
+                 accu: 135250 var,  135023 idcode,  505 callback
             accu incr: 0 var,  0 idcode,  0 callback
-270 Elapsed time:    0:00:01    Thu Jul  9 17:10:38 2026
+270 Elapsed time:    0:00:01    Wed Jul 15 11:08:34 2026
 271 User CPU time used: 0 seconds
 272 System CPU time used: 0 seconds
 273 sps_tcl_fsdbDumpflush_vd_main at 0 : N/A(0)
 274 *Verdi* : Flush all FSDB Files at 0 ns.
 275 End of simulation at 51090
-276 Memory usage: 488.641 M
-277 Maximum resident set size: 130 MB
+276 Memory usage: 488.702 M
+277 Maximum resident set size: 133 MB
 278 Hard page faults: 0
-279 Soft page faults: 48370
-280 Elapsed time:    0:00:01    Thu Jul  9 17:10:38 2026
+279 Soft page faults: 49046
+280 Elapsed time:    0:00:02    Wed Jul 15 11:08:35 2026
 281 User CPU time used: 0 seconds
 282 System CPU time used: 0 seconds
 283 Begin FSDB profile info:
-284 FSDB Writer : bc1(30392) bcn(149556) mtf/stf(0/1)
-FSDB Writer elapsed time : flush(0.049362) io wait(0.000000) theadpool wait(0.000000)
+284 FSDB Writer : bc1(30396) bcn(149556) mtf/stf(0/1)
+FSDB Writer elapsed time : flush(0.049099) io wait(0.000000) theadpool wait(0.000000)
 FSDB Writer cpu time : MT Compression : 0
 285 End FSDB profile info
-286 FSDB closed. Name: waveform.fsdb Size: 98748
+286 FSDB closed. Name: waveform.fsdb Size: 99089
 287 Parallel profile     - ProducerThread:1 ConsumerThread:1 Buffer:64MB
-288                      - BlockUsed:1 Acquire:49867 BufferUsed:630630
+288                      - BlockUsed:1 Acquire:49870 BufferUsed:630657
 289                      - Flush:4 Expand:0 ProducerWait:0 ConsumerWait:0
-290                      - MainProducerTime:0.772424966 TotalConsumerTime:0.000000000
-291                      - ElapsedTime:0.369761000
-292 Producer   0 profile - BlockUsed:1 Acquire:49867 BufferUsed:630630
+290                      - MainProducerTime:1.098280134 TotalConsumerTime:0.000000000
+291                      - ElapsedTime:0.676352000
+292 Producer   0 profile - BlockUsed:1 Acquire:49870 BufferUsed:630657
 293 Consumer   0 profile - Affinity:-1 CPUTime:0.000000000 LifeTime:0.000000000 (-nan%)
-294                      - BlockUsed:1 Acquire:49867 BufferUsed:630630
+294                      - BlockUsed:1 Acquire:49870 BufferUsed:630657
 295 SimExit
-296 Elapsed time:    0:00:01    Thu Jul  9 17:10:38 2026
+296 Elapsed time:    0:00:02    Wed Jul 15 11:08:35 2026
 297 User CPU time used: 0 seconds
 298 System CPU time used: 0 seconds
 299 Sim process exit

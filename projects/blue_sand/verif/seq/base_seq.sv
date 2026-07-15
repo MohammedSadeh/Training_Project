@@ -128,7 +128,11 @@ class base_seq extends uvm_sequence;
       
             //can use uvm_do macro instead 
             start_item(item);
-            item.randomize();
+            item.randomize() with { //don't change num_of_cycles while counter is enabled
+                                    !(paddr == 'h3 && pwrite == 1);
+                                    //don't change the mode
+                                    !(paddr == 'h4 && pwrite == 1);
+                                };
             `uvm_info("SEQ", $sformatf("Generate new item"), UVM_LOW)
             `uvm_info("SEQ", $sformatf("Seq send PKT to Driver: %s", item.conv2str), UVM_LOW)
             finish_item(item);
