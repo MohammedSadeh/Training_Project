@@ -106,7 +106,7 @@ class base_seq extends uvm_sequence;
     endtask
 
     //config the counter
-    virtual task config_counter(input int num_of_cycles = 1, mode_e run_mode = FREE_RUNNING_MODE,
+    virtual task config_counter(input int num_of_cycles = 0, mode_e run_mode = FREE_RUNNING_MODE,
                                 direction_e run_direction = UP, int main_value = 128, second_value = 32);      
        //configure the counter
        //disable it

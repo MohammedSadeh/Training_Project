@@ -23,3 +23,18 @@
   CREATE_STREAM @390 {NAME:my_seq T:Transactions SCOPE:uvm_test_top.my_env.agt_apb.seqr0 STREAM:804}
   CREATE_STREAM @390 {NAME:my_seq T:Transactions SCOPE:uvm_test_top.my_env.agt_apb.seqr0 STREAM:804}
   CREATE_STREAM @390 {NAME:my_seq T:Transactions SCOPE:uvm_test_top.my_env.agt_apb.seqr0 STREAM:804}
+  CREATE_STREAM @390 {NAME:my_seq T:Transactions SCOPE:uvm_test_top.my_env.agt_apb.seqr0 STREAM:804}
+  CREATE_STREAM @390 {NAME:my_seq T:Transactions SCOPE:uvm_test_top.my_env.agt_apb.seqr0 STREAM:804}
+  CREATE_STREAM @390 {NAME:my_seq T:Transactions SCOPE:uvm_test_top.my_env.agt_apb.seqr0 STREAM:804}
+  CREATE_STREAM @390 {NAME:my_seq T:Transactions SCOPE:uvm_test_top.my_env.agt_apb.seqr0 STREAM:804}
+  CREATE_STREAM @390 {NAME:my_seq T:Transactions SCOPE:uvm_test_top.my_env.agt_apb.seqr0 STREAM:804}
+  CREATE_STREAM @390 {NAME:my_seq T:Transactions SCOPE:uvm_test_top.my_env.agt_apb.seqr0 STREAM:804}
+  CREATE_STREAM @390 {NAME:my_seq T:Transactions SCOPE:uvm_test_top.my_env.agt_apb.seqr0 STREAM:804}
+  CREATE_STREAM @390 {NAME:my_seq T:Transactions SCOPE:uvm_test_top.my_env.agt_apb.seqr0 STREAM:804}
+  CREATE_STREAM @390 {NAME:my_seq T:Transactions SCOPE:uvm_test_top.my_env.agt_apb.seqr0 STREAM:804}
+  CREATE_STREAM @390 {NAME:my_seq T:Transactions SCOPE:uvm_test_top.my_env.agt_apb.seqr0 STREAM:804}
+  CREATE_STREAM @390 {NAME:my_seq T:Transactions SCOPE:uvm_test_top.my_env.agt_apb.seqr0 STREAM:808}
+  CREATE_STREAM @390 {NAME:my_seq T:Transactions SCOPE:uvm_test_top.my_env.agt_apb.seqr0 STREAM:808}
+  CREATE_STREAM @390 {NAME:my_seq T:Transactions SCOPE:uvm_test_top.my_env.agt_apb.seqr0 STREAM:808}
+  CREATE_STREAM @390 {NAME:my_seq T:Transactions SCOPE:uvm_test_top.my_env.agt_apb.seqr0 STREAM:808}
+  CREATE_STREAM @390 {NAME:my_seq T:Transactions SCOPE:uvm_test_top.my_env.agt_apb.seqr0 STREAM:808}

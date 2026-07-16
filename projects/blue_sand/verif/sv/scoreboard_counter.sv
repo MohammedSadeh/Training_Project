@@ -12,7 +12,9 @@ class scoreboard_counter extends uvm_scoreboard;
   bit [`DATA_WIDTH-1:0] mask [bit [`ADDR_WIDTH-1:0]];
   
   virtual counter_if vif;
-  
+ 
+  sequence_item_apb apb_items_queue[$]; 
+
   //expected output
   bit [`COUNT_WIDTH-1:0] exp_count;
   bit main_loaded;  
@@ -62,46 +64,14 @@ class scoreboard_counter extends uvm_scoreboard;
   virtual task run_phase(uvm_phase phase);
     super.run_phase(phase);
     fork
+        apply_apb_trans();
         ref_model();
     join_none
   endtask
 
   virtual function void write_apb (sequence_item_apb pkt_apb);
 	// What should be done with the data packet received comes here
-    //read or write pkt
-    
-    //write
-    if(pkt_apb.pwrite == 1) begin
-      //only if te register is RW (not RO or RC)
-      if(pkt_apb.paddr !== 'h05 && pkt_apb.paddr !== 'h06) begin
-        reg_model [pkt_apb.paddr] = pkt_apb.pwdata & mask[pkt_apb.paddr];
-        `uvm_info("SCB-Reg Model", $sformatf("Write to address %0h,Value %0h", pkt_apb.paddr, reg_model[pkt_apb.paddr]), UVM_LOW);
-      end
-      //if the write to main load value -> update exp
-      if(pkt_apb.paddr === 'h01) begin
-        exp_count = reg_model['h01];
-        main_loaded = 1;
-        `uvm_info("MAIN_LOAD", $sformatf("@%0t: Load Main Value to 0x%0h",$time, exp_count), UVM_LOW)
-      end
-    end
-    
-    //read
-    else begin
-      if (reg_model.exists(pkt_apb.paddr)) begin
-        if ( (pkt_apb.prdata & mask[pkt_apb.paddr])!== reg_model[pkt_apb.paddr]) begin
-          `uvm_error("SCB", $sformatf("Mismatch [READ] @0x%0h: exp = 0x%0h act = 0x%0h",pkt_apb.paddr, reg_model[pkt_apb.paddr], pkt_apb.prdata & mask[pkt_apb.paddr]));
-        end
-        
-        //if RC clear it
-        if(pkt_apb.paddr === 'h06) begin
-          reg_model[pkt_apb.paddr] = '0;
-        end
-      end
-      //if not exist
-      else begin
-        `uvm_error("SCB", $sformatf("Mismatch [READ Not Exist in Reg model] @0x%0h: act = 0x%0h", pkt_apb.paddr, pkt_apb.prdata & mask[pkt_apb.paddr]));
-      end
-    end
+    apb_items_queue.push_front(pkt_apb);    
   endfunction  
   
   virtual function void write_counter (sequence_item_counter pkt_counter);
@@ -113,7 +83,48 @@ class scoreboard_counter extends uvm_scoreboard;
     end
   endfunction
   
-  
+  task apply_apb_trans();
+    sequence_item_apb pkt_apb;
+    forever begin
+        pkt_apb = new();
+        wait(apb_items_queue.size() > 0);
+        pkt_apb = apb_items_queue.pop_back();
+
+        //write
+        if(pkt_apb.pwrite == 1) begin
+            //only if te register is RW (not RO or RC)
+            if(pkt_apb.paddr !== 'h05 && pkt_apb.paddr !== 'h06) begin
+                reg_model [pkt_apb.paddr] = pkt_apb.pwdata & mask[pkt_apb.paddr];
+                `uvm_info("SCB-Reg Model", $sformatf("Write to address %0h,Value %0h", pkt_apb.paddr, reg_model[pkt_apb.paddr]), UVM_LOW);
+            end
+            //if the write to main load value -> update exp
+            if(pkt_apb.paddr === 'h01) begin
+                exp_count = reg_model['h01];
+                main_loaded = 1;
+                `uvm_info("MAIN_LOAD", $sformatf("@%0t: Load Main Value to 0x%0h",$time, exp_count), UVM_LOW)
+            end
+        end
+    
+        //read
+        else begin
+            if (reg_model.exists(pkt_apb.paddr)) begin
+                if ( (pkt_apb.prdata & mask[pkt_apb.paddr]) != reg_model[pkt_apb.paddr]) begin
+                    `uvm_error("SCB", $sformatf("Mismatch [READ] @0x%0h: exp = 0x%0h act = 0x%0h",pkt_apb.paddr, reg_model[pkt_apb.paddr], pkt_apb.prdata & mask[pkt_apb.paddr]));
+                end
+        
+                //if RC clear it
+                if(pkt_apb.paddr === 'h06) begin
+                    reg_model[pkt_apb.paddr] = '0;
+                end
+            end
+            //if not exist
+            else begin
+                `uvm_error("SCB", $sformatf("Mismatch [READ Not Exist in Reg model] @0x%0h: act = 0x%0h", pkt_apb.paddr, pkt_apb.prdata & mask[pkt_apb.paddr]));
+            end
+        end
+    end
+  endtask
+
   task ref_model();
     int count;
     @(negedge vif.presetn) begin
@@ -123,31 +134,24 @@ class scoreboard_counter extends uvm_scoreboard;
     forever begin
       count = reg_model['h03];
       @(posedge vif.pclk);
+      #0;
       if(reg_model['h00] == 1 && vif.presetn === 1) begin //check if counter is enable
-        //wait for the number of cycle
-//        for(int i = 0; i < reg_model['h03]; i++) begin
-//            @(posedge vif.pclk);
-//            if(main_loaded === 1) begin
-//                i = 0; //repeat
-//                main_loaded = 0;
-//            end
-//        end
 
-      while (count != 0) begin
-      main_loaded = 0;
-        @(posedge vif.pclk);
-        if(main_loaded === 1) begin
-            main_loaded =0;
-            count = reg_model['h03];
+        while (count != 0) begin
+        main_loaded = 0;
+          @(posedge vif.pclk);
+          #0;
+          if(main_loaded === 1) begin
+              main_loaded =0;
+              count = reg_model['h03];
+          end
+          else begin
+              count -= 1;
+          end
         end
-        else begin
-            count -= 1;
-        end
-      end
-
-
+     
+     if(reg_model['h00] == 1) begin //check if enabled
         //dec or inc based on direction
-    if(reg_model['h00] == 1) begin //only if enabled change expected count  
         //increment
         if (reg_model['h04][2] == 1) begin
 
@@ -277,8 +281,8 @@ class scoreboard_counter extends uvm_scoreboard;
 
       reg_model['h05] = exp_count & mask['h05];
       `uvm_info("SCB", $sformatf("@%t: exp_count = reg_model[0x05] = %0d", $time, exp_count), UVM_LOW)
-    end    
-  end
     end
+   end
+  end
   endtask 
 endclass
