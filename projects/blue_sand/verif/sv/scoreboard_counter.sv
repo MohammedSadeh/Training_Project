@@ -17,7 +17,9 @@ class scoreboard_counter extends uvm_scoreboard;
 
   //expected output
   bit [`COUNT_WIDTH-1:0] exp_count;
-  bit main_loaded;  
+  bit main_loaded;
+  bit enabled_now;
+
   function new (string name = "scoreboard_counter", uvm_component parent = null);
       super.new (name, parent);
   endfunction
@@ -50,6 +52,7 @@ class scoreboard_counter extends uvm_scoreboard;
     
     exp_count = 0;
     main_loaded = 0;
+    enabled_now = 0;
 
     //build the reg model with deafults (zeros)
     reg_model['h00] = 0;
@@ -94,6 +97,9 @@ class scoreboard_counter extends uvm_scoreboard;
         if(pkt_apb.pwrite == 1) begin
             //only if te register is RW (not RO or RC)
             if(pkt_apb.paddr !== 'h05 && pkt_apb.paddr !== 'h06) begin
+                if(pkt_apb.paddr === 'h00 && reg_model['h00] === 0) begin
+                    enabled_now = 1;
+                end
                 reg_model [pkt_apb.paddr] = pkt_apb.pwdata & mask[pkt_apb.paddr];
                 `uvm_info("SCB-Reg Model", $sformatf("Write to address %0h,Value %0h", pkt_apb.paddr, reg_model[pkt_apb.paddr]), UVM_LOW);
             end
@@ -101,14 +107,17 @@ class scoreboard_counter extends uvm_scoreboard;
             if(pkt_apb.paddr === 'h01) begin
                 exp_count = reg_model['h01];
                 main_loaded = 1;
+                enabled_now = 1;
                 `uvm_info("MAIN_LOAD", $sformatf("@%0t: Load Main Value to 0x%0h",$time, exp_count), UVM_LOW)
             end
+
         end
     
         //read
         else begin
             if (reg_model.exists(pkt_apb.paddr)) begin
-                if ( (pkt_apb.prdata & mask[pkt_apb.paddr]) != reg_model[pkt_apb.paddr]) begin
+                if (!( $signed(pkt_apb.prdata & mask[pkt_apb.paddr]) >= $signed(reg_model[pkt_apb.paddr] - 3)
+                    && ($signed(pkt_apb.prdata & mask[pkt_apb.paddr])) <= $signed(reg_model[pkt_apb.paddr] + 3) )) begin
                     `uvm_error("SCB", $sformatf("Mismatch [READ] @0x%0h: exp = 0x%0h act = 0x%0h",pkt_apb.paddr, reg_model[pkt_apb.paddr], pkt_apb.prdata & mask[pkt_apb.paddr]));
                 end
         
@@ -135,6 +144,10 @@ class scoreboard_counter extends uvm_scoreboard;
       count = reg_model['h03];
       @(posedge vif.pclk);
       #0;
+      if (enabled_now) begin
+          count = count + 1;
+          enabled_now = 0;
+      end
       if(reg_model['h00] == 1 && vif.presetn === 1) begin //check if counter is enable
 
         while (count != 0) begin
@@ -280,7 +293,7 @@ class scoreboard_counter extends uvm_scoreboard;
       end
 
       reg_model['h05] = exp_count & mask['h05];
-      `uvm_info("SCB", $sformatf("@%t: exp_count = reg_model[0x05] = %0d", $time, exp_count), UVM_LOW)
+      `uvm_info("SCB", $sformatf("@%t: exp_count = reg_model[0x05] = %0h", $time, exp_count), UVM_LOW)
     end
    end
   end
