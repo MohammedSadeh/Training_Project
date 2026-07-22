@@ -1,0 +1,1 @@
+  CREATE_STREAM @490 {NAME:base_seq T:Transactions SCOPE:uvm_test_top.my_env.agt_apb.seqr0 STREAM:870}

@@ -43,6 +43,7 @@
 /home/st102/Training/projects/blue_sand/verif/tests/free_running_mode_test.sv
 /home/st102/Training/projects/blue_sand/verif/tests/reg_access_test.sv
 /home/st102/Training/projects/blue_sand/verif/tests/single_wrap_point_mode_test.sv
+/home/st102/Training/projects/blue_sand/verif/tests/special_single_wrap_point_mode_test.sv
 /home/st102/Training/projects/blue_sand/verif/tests/tests_pkg.sv
 /usr/synopsys/vcs/T-2022.06-SP2/etc/uvm-1.2/base/uvm_barrier.svh
 /usr/synopsys/vcs/T-2022.06-SP2/etc/uvm-1.2/base/uvm_base.svh
