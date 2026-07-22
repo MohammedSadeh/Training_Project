@@ -1,0 +1,74 @@
+Command: /home/st102/Training/outputs/blue_sand/simv +UVM_TESTNAME=special_single_wrap_point_mode_test -l /home/st102/Training/outputs/blue_sand/special_single_wrap_point_mode_test/run.log +ntb_random_seed=868893 +UVM_VERBOSITY=UVM_MEDIUM +vcs+lic+wait -ucli -i /home/st102/Training/outputs/blue_sand/special_single_wrap_point_mode_test/dump_config.ucli
+Chronologic VCS simulator copyright 1991-2022
+Contains Synopsys proprietary information.
+Compiler version T-2022.06-SP2_Full64; Runtime version T-2022.06-SP2_Full64;  Jul 22 13:07 2026
+UVM_INFO /usr/synopsys/vcs/T-2022.06-SP2/etc/uvm-1.2/base/uvm_root.svh(402) @ 0: reporter [UVM/RELNOTES] 
+----------------------------------------------------------------
+UVM-1.2.Synopsys
+(C) 2007-2014 Mentor Graphics Corporation
+(C) 2007-2014 Cadence Design Systems, Inc.
+(C) 2006-2014 Synopsys, Inc.
+(C) 2011-2013 Cypress Semiconductor Corp.
+(C) 2013-2014 NVIDIA Corporation
+----------------------------------------------------------------
+
+  ***********       IMPORTANT RELEASE NOTES         ************
+
+  You are using a version of the UVM library that has been compiled
+  with `UVM_NO_DEPRECATED undefined.
+  See http://www.eda.org/svdb/view.php?id=3313 for more details.
+
+  You are using a version of the UVM library that has been compiled
+  with `UVM_OBJECT_DO_NOT_NEED_CONSTRUCTOR undefined.
+  See http://www.eda.org/svdb/view.php?id=3770 for more details.
+
+      (Specify +UVM_NO_RELNOTES to turn off this notice)
+
+ucli% config timebase 1NS
+1ns
+ucli% dump -file waveform.fsdb -type FSDB
+*Verdi* Loading libsscore_vcs202206.so
+FSDB Dumper for VCS, Release Verdi_T-2022.06-SP2, Linux x86_64/64bit, 11/22/2022
+(C) 1996 - 2022 by Synopsys, Inc.
+*Verdi* : Create FSDB file 'waveform.fsdb'
+FSDB0
+ucli% dump -add / -depth 0 -fid FSDB0 -fsdb_opt +all
+*Verdi* : Begin traversing the scope (/), layer (0).
+*Verdi* : Enable +all dumping.
+*Verdi* : End of traversing.
+*Verdi* : Flush all FSDB Files at 0 ns.
+1
+ucli% run
+UVM_WARNING @ 0: reporter [BDTYP] Cannot create a component of type 'special_single_wrap_point_mode_test' because it is not registered with the factory.
+UVM_FATAL @ 0: reporter [INVTST] Requested test from command line +UVM_TESTNAME=special_single_wrap_point_mode_test not found.
+UVM_INFO /usr/synopsys/vcs/T-2022.06-SP2/etc/uvm-1.2/base/uvm_report_catcher.svh(705) @ 0: reporter [UVM/REPORT/CATCHER] 
+--- UVM Report catcher Summary ---
+
+
+Number of demoted UVM_FATAL reports  :    0
+Number of demoted UVM_ERROR reports  :    0
+Number of demoted UVM_WARNING reports:    0
+Number of caught UVM_FATAL reports   :    0
+Number of caught UVM_ERROR reports   :    0
+Number of caught UVM_WARNING reports :    0
+
+UVM_INFO /usr/synopsys/vcs/T-2022.06-SP2/etc/uvm-1.2/base/uvm_report_server.svh(904) @ 0: reporter [UVM/REPORT/SERVER] 
+--- UVM Report Summary ---
+
+** Report counts by severity
+UVM_INFO :    2
+UVM_WARNING :    1
+UVM_ERROR :    0
+UVM_FATAL :    1
+** Report counts by id
+[BDTYP]     1
+[INVTST]     1
+[UVM/RELNOTES]     1
+[UVM/REPORT/CATCHER]     1
+
+$finish called from file "/usr/synopsys/vcs/T-2022.06-SP2/etc/uvm-1.2/base/uvm_root.svh", line 135.
+$finish at simulation time                    0
+           V C S   S i m u l a t i o n   R e p o r t 
+Time: 0 ns
+CPU Time:      0.650 seconds;       Data structure size:   0.6Mb
+Wed Jul 22 13:07:33 2026

@@ -1,4 +1,4 @@
-711      
+743      
 0 uvm_macros.svh
 0 /usr/synopsys/vcs/T-2022.06-SP2/etc/systemverilog/uvm_macros.svh
 0 /usr/synopsys/vcs/T-2022.06-SP2/etc/uvm-1.2/vcs/uvm_macros.svh
@@ -639,6 +639,24 @@
 0 /usr/synopsys/vcs/T-2022.06-SP2/etc/uvm-1.2/verdi/base_seq.sv
 0 /usr/synopsys/vcs/T-2022.06-SP2/etc/uvm-1.2/base_seq.sv
 0 /home/st102/Training/projects/blue_sand/verif/sv/base_seq.sv
+0 single_wrap_point_mode_seq.sv
+0 /usr/synopsys/vcs/T-2022.06-SP2/etc/systemverilog/single_wrap_point_mode_seq.sv
+0 /usr/synopsys/vcs/T-2022.06-SP2/etc/uvm-1.2/vcs/single_wrap_point_mode_seq.sv
+0 /usr/synopsys/vcs/T-2022.06-SP2/etc/uvm-1.2/verdi/single_wrap_point_mode_seq.sv
+0 /usr/synopsys/vcs/T-2022.06-SP2/etc/uvm-1.2/single_wrap_point_mode_seq.sv
+0 /home/st102/Training/projects/blue_sand/verif/sv/single_wrap_point_mode_seq.sv
+0 double_wrap_point_mode_seq.sv
+0 /usr/synopsys/vcs/T-2022.06-SP2/etc/systemverilog/double_wrap_point_mode_seq.sv
+0 /usr/synopsys/vcs/T-2022.06-SP2/etc/uvm-1.2/vcs/double_wrap_point_mode_seq.sv
+0 /usr/synopsys/vcs/T-2022.06-SP2/etc/uvm-1.2/verdi/double_wrap_point_mode_seq.sv
+0 /usr/synopsys/vcs/T-2022.06-SP2/etc/uvm-1.2/double_wrap_point_mode_seq.sv
+0 /home/st102/Training/projects/blue_sand/verif/sv/double_wrap_point_mode_seq.sv
+0 special_single_wrap_point_mode_seq.sv
+0 /usr/synopsys/vcs/T-2022.06-SP2/etc/systemverilog/special_single_wrap_point_mode_seq.sv
+0 /usr/synopsys/vcs/T-2022.06-SP2/etc/uvm-1.2/vcs/special_single_wrap_point_mode_seq.sv
+0 /usr/synopsys/vcs/T-2022.06-SP2/etc/uvm-1.2/verdi/special_single_wrap_point_mode_seq.sv
+0 /usr/synopsys/vcs/T-2022.06-SP2/etc/uvm-1.2/special_single_wrap_point_mode_seq.sv
+0 /home/st102/Training/projects/blue_sand/verif/sv/special_single_wrap_point_mode_seq.sv
 0 driver_apb.sv
 0 /usr/synopsys/vcs/T-2022.06-SP2/etc/systemverilog/driver_apb.sv
 0 /usr/synopsys/vcs/T-2022.06-SP2/etc/uvm-1.2/vcs/driver_apb.sv
@@ -710,6 +728,20 @@
 0 /usr/synopsys/vcs/T-2022.06-SP2/etc/uvm-1.2/free_running_mode_test.sv
 0 /home/st102/Training/projects/blue_sand/verif/sv/free_running_mode_test.sv
 0 /home/st102/Training/projects/blue_sand/verif/seq/free_running_mode_test.sv
+0 single_wrap_point_mode_test.sv
+0 /usr/synopsys/vcs/T-2022.06-SP2/etc/systemverilog/single_wrap_point_mode_test.sv
+0 /usr/synopsys/vcs/T-2022.06-SP2/etc/uvm-1.2/vcs/single_wrap_point_mode_test.sv
+0 /usr/synopsys/vcs/T-2022.06-SP2/etc/uvm-1.2/verdi/single_wrap_point_mode_test.sv
+0 /usr/synopsys/vcs/T-2022.06-SP2/etc/uvm-1.2/single_wrap_point_mode_test.sv
+0 /home/st102/Training/projects/blue_sand/verif/sv/single_wrap_point_mode_test.sv
+0 /home/st102/Training/projects/blue_sand/verif/seq/single_wrap_point_mode_test.sv
+0 double_wrap_point_mode_test.sv
+0 /usr/synopsys/vcs/T-2022.06-SP2/etc/systemverilog/double_wrap_point_mode_test.sv
+0 /usr/synopsys/vcs/T-2022.06-SP2/etc/uvm-1.2/vcs/double_wrap_point_mode_test.sv
+0 /usr/synopsys/vcs/T-2022.06-SP2/etc/uvm-1.2/verdi/double_wrap_point_mode_test.sv
+0 /usr/synopsys/vcs/T-2022.06-SP2/etc/uvm-1.2/double_wrap_point_mode_test.sv
+0 /home/st102/Training/projects/blue_sand/verif/sv/double_wrap_point_mode_test.sv
+0 /home/st102/Training/projects/blue_sand/verif/seq/double_wrap_point_mode_test.sv
 52
 +define+UVM_VCS_RECORD
 +define+UVM_VERDI_VIF_RECORD
@@ -814,13 +846,15 @@ CORETOOLS=/usr/synopsys/coretools/N-2017.12
 CDESIGNER=/usr/synopsys/syn/R-2020.09-SP5-5
 0
 0
-220
-1783611219 /home/st102/Training/projects/blue_sand/verif/tests/free_running_mode_test.sv
+225
+1784713634 /home/st102/Training/projects/blue_sand/verif/tests/double_wrap_point_mode_test.sv
+1784635801 /home/st102/Training/projects/blue_sand/verif/tests/single_wrap_point_mode_test.sv
+1784635192 /home/st102/Training/projects/blue_sand/verif/tests/free_running_mode_test.sv
 1783611283 /home/st102/Training/projects/blue_sand/verif/tests/reg_access_test.sv
 1783608001 /home/st102/Training/projects/blue_sand/verif/tests/base_test.sv
 1783523478 /home/st102/Training/projects/blue_sand/verif/sv/env.sv
 1783604199 /home/st102/Training/projects/blue_sand/verif/sv/env_cfg.sv
-1784628589 /home/st102/Training/projects/blue_sand/verif/sv/scoreboard_counter.sv
+1784713370 /home/st102/Training/projects/blue_sand/verif/sv/scoreboard_counter.sv
 1783604199 /home/st102/Training/projects/blue_sand/verif/sv/scoreboard_apb.sv
 1783604199 /home/st102/Training/projects/blue_sand/verif/sv/agent_counter.sv
 1783604199 /home/st102/Training/projects/blue_sand/verif/sv/agent_apb.sv
@@ -828,6 +862,9 @@ CDESIGNER=/usr/synopsys/syn/R-2020.09-SP5-5
 1783852279 /home/st102/Training/projects/blue_sand/verif/sv/monitor_counter.sv
 1784104089 /home/st102/Training/projects/blue_sand/verif/sv/monitor_apb.sv
 1783523478 /home/st102/Training/projects/blue_sand/verif/sv/driver_apb.sv
+1784714624 /home/st102/Training/projects/blue_sand/verif/seq/special_single_wrap_point_mode_seq.sv
+1784713526 /home/st102/Training/projects/blue_sand/verif/seq/double_wrap_point_mode_seq.sv
+1784637747 /home/st102/Training/projects/blue_sand/verif/seq/single_wrap_point_mode_seq.sv
 1784202457 /home/st102/Training/projects/blue_sand/verif/seq/base_seq.sv
 1783580762 /home/st102/Training/projects/blue_sand/verif/seq/apb_read_write_seq.sv
 1783845074 /home/st102/Training/projects/blue_sand/verif/sv/sequence_item_counter.sv
@@ -995,8 +1032,8 @@ CDESIGNER=/usr/synopsys/syn/R-2020.09-SP5-5
 1669785265 /usr/synopsys/vcs/T-2022.06-SP2/etc/uvm-1.2/uvm_macros.svh
 1783842077 /home/st102/Training/projects/blue_sand/verif/tb/testbench.sv
 1783523478 /home/st102/Training/projects/blue_sand/verif/tb/wrapper.sv
-1783608614 /home/st102/Training/projects/blue_sand/verif/tests/tests_pkg.sv
-1783608975 /home/st102/Training/projects/blue_sand/verif/sv/env_pkg.sv
+1784713693 /home/st102/Training/projects/blue_sand/verif/tests/tests_pkg.sv
+1784714669 /home/st102/Training/projects/blue_sand/verif/sv/env_pkg.sv
 1783842000 /home/st102/Training/projects/blue_sand/verif/tb/counter_if.sv
 1783603998 /home/st102/Training/projects/blue_sand/verif/tb/apb_if.sv
 1783602482 /home/st102/Training/projects/blue_sand/verif/sv/parameters.sv
@@ -1042,5 +1079,5 @@ CDESIGNER=/usr/synopsys/syn/R-2020.09-SP5-5
 1669782209 /usr/synopsys/vcs/T-2022.06-SP2/linux64/lib/liberrorinf.so
 1669782120 /usr/synopsys/vcs/T-2022.06-SP2/linux64/lib/libsnpsmalloc.so
 1669782200 /usr/synopsys/vcs/T-2022.06-SP2/linux64/lib/libvfs.so
-1784628604 /home/st102/Training/outputs/blue_sand/simv.daidir
+1784714852 /home/st102/Training/outputs/blue_sand/simv.daidir
 -1 partitionlib

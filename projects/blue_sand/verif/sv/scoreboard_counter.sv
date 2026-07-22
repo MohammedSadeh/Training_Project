@@ -20,6 +20,10 @@ class scoreboard_counter extends uvm_scoreboard;
   bit main_loaded;
   bit enabled_now;
 
+
+  bit start;
+  bit change_direction;
+
   function new (string name = "scoreboard_counter", uvm_component parent = null);
       super.new (name, parent);
   endfunction
@@ -99,7 +103,13 @@ class scoreboard_counter extends uvm_scoreboard;
             if(pkt_apb.paddr !== 'h05 && pkt_apb.paddr !== 'h06) begin
                 if(pkt_apb.paddr === 'h00 && reg_model['h00] === 0) begin
                     enabled_now = 1;
+                    start = 1;
                 end
+
+                if(pkt_apb.paddr === 'h04 && (reg_model['h04][2] !== pkt_apb.pwdata[2])) begin
+                    change_direction = 1;
+                end
+
                 reg_model [pkt_apb.paddr] = pkt_apb.pwdata & mask[pkt_apb.paddr];
                 `uvm_info("SCB-Reg Model", $sformatf("Write to address %0h,Value %0h", pkt_apb.paddr, reg_model[pkt_apb.paddr]), UVM_LOW);
             end
@@ -108,6 +118,7 @@ class scoreboard_counter extends uvm_scoreboard;
                 exp_count = reg_model['h01];
                 main_loaded = 1;
                 enabled_now = 1;
+                start = 1;
                 `uvm_info("MAIN_LOAD", $sformatf("@%0t: Load Main Value to 0x%0h",$time, exp_count), UVM_LOW)
             end
 
@@ -148,14 +159,14 @@ class scoreboard_counter extends uvm_scoreboard;
           count = count + 1;
           enabled_now = 0;
       end
-      if(reg_model['h00] == 1 && vif.presetn === 1) begin //check if counter is enable
+      if(reg_model['h00] === 1 && vif.presetn === 1) begin //check if counter is enable
 
         while (count != 0) begin
-        main_loaded = 0;
+          main_loaded = 0;
           @(posedge vif.pclk);
           #0;
           if(main_loaded === 1) begin
-              main_loaded =0;
+              main_loaded = 0;
               count = reg_model['h03];
           end
           else begin
@@ -182,30 +193,38 @@ class scoreboard_counter extends uvm_scoreboard;
           if(reg_model['h04][1:0] == 1) begin
               if(&exp_count) begin //reach max value
                   exp_count = reg_model['h01]; //wrap to main load
+                  start = 1;
               end
               //if reached main load value when counting up
-              else if(exp_count == reg_model['h01]) begin
+              else if(exp_count == reg_model['h01] && !start && !change_direction) begin
                   exp_count = 0; //wrap to 0
+                  start = 1;
               end
               else begin
                   exp_count += 1; //count normally
+                  start = 0;
+                  change_direction = 0;
               end
           end
 
           //Double wrap point mode
           if(reg_model['h04][1:0] == 2) begin
               //if reached secondery load value
-              if(exp_count == reg_model['h02]) begin
+              if(exp_count == reg_model['h02] && !start && !change_direction) begin
                   exp_count = reg_model['h01]; //wrap to main load value
+                  start = 1;
               end
 
               //if reached main load value
-              else if(exp_count == reg_model['h01]) begin
+              else if(exp_count == reg_model['h01] && !start && !change_direction) begin
                   exp_count = reg_model['h02]; // wrap to secondey load value
+                  start = 1;
               end
 
               else begin
                   exp_count += 1; //normally count
+                  start = 0;
+                  change_direction = 0;
               end
           end
 
@@ -245,13 +264,17 @@ class scoreboard_counter extends uvm_scoreboard;
           if(reg_model['h04][1:0] == 1) begin
               if(exp_count == 0) begin
                   exp_count = reg_model['h01]; //wrap to main load
+                  start = 1;
               end
               //if reached main load value when counting down
-              else if(exp_count == reg_model['h01]) begin
+              else if(exp_count == reg_model['h01] && !start && !change_direction) begin
                   exp_count = '1; //all ones (wrap to max)
+                  start = 1;
               end
               else begin
                   exp_count -= 1; //normally count
+                  change_direction = 0;
+                  start = 0;
               end
           end
 
@@ -292,10 +315,10 @@ class scoreboard_counter extends uvm_scoreboard;
           end
       end
 
-      reg_model['h05] = exp_count & mask['h05];
-      `uvm_info("SCB", $sformatf("@%t: exp_count = reg_model[0x05] = %0h", $time, exp_count), UVM_LOW)
     end
    end
+      reg_model['h05] = exp_count & mask['h05];
+      `uvm_info("SCB", $sformatf("@%t: exp_count = reg_model[0x05] = %0h", $time, exp_count), UVM_LOW)
   end
   endtask 
 endclass

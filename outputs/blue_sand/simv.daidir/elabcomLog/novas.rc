@@ -379,8 +379,10 @@ Verdi_OpenFile = 665,384,590,340
 SetWindowTimeUnitDialog = 733,503,433,84
 unknownSave = 719,423,461,245
 importDesignForm = 601,265,715,574
+qWaveSignalDialog = 559,276,800,479
 QwWarnMsgDlg = 650,370,600,250
-QwUserAskDlg = 798,489,324,130
+QwUserAskDlg = 798,487,324,134
+textSearchInPrj_base = 734,455,449,194
 [Relationship]
 hideRecursiceNode = FALSE
 [Safety]
@@ -465,7 +467,7 @@ SimMode = TRUE
 interactiveDebugging = TRUE
 KeepBreakPoints = FALSE
 vcs_svPath = /home/st102/Training/outputs/blue_sand/simv
-vcs_svOption = +UVM_TESTNAME=free_running_mode_test +ntb_random_seed=972856 +UVM_VERBOSITY=UVM_MEDIUM +vcs+lic+wait -ucli
+vcs_svOption = +UVM_TESTNAME=single_wrap_point_mode_test +ntb_random_seed=529817 +UVM_VERBOSITY=UVM_MEDIUM +vcs+lic+wait -ucli
 [SimulationPlus2]
 eventDumpUnfinish = FALSE
 [Source]
@@ -665,6 +667,8 @@ Button2 = "Next 1000 Time" "#1000 $stop;.\n"
 Button1 = "Dump All Signals" "$fsdbDumpvars;\n"
 [VIA]
 viaLogViewerDefaultRuleOneSearchForm = "share/VIA/Apps/PredefinedRules/Misc/Onesearch_rule.rc"
+viaToolBox = /home/st102/via.rc
+viaToolBoxGeometry = 28 58 973 664
 [VIA.oneSearch.preference]
 DefaultDisplayTimeUnit = "1.000000ns"
 DefaultLogTimeUnit = "1.000000ns"
@@ -783,8 +787,8 @@ AutoApplySeverityColor = TRUE
 scope_to_save_with_macro
 open_file_dir
 open_rc_file_dir
-getSignalForm = 0 0 800 479 100 30 100 30
-viewPort = 0 25 1920 394 227 71
+getSignalForm = 559 239 800 479 245 381 505 183
+viewPort = 0 25 1920 438 227 71
 legendBackground = -c ID_BLACK
 valueBackground = -c ID_BLACK
 curveBackground = -c ID_BLACK
@@ -950,8 +954,9 @@ printBasic = 1 0 0 FALSE FALSE
 printDest = -printer {}
 printSignature = {%f %h %t} {}
 curveWindow_Drag&Drop_Mode = TRUE
-RecentFile1 = "\"/home/st102/Training/outputs/blue_sand/free_running_mode_test/waveform.fsdb\""
-RecentFile2 = "\"/home/st102/Training/outputs/blue_sand/base_test/waveform.fsdb\""
+RecentFile1 = "\"/home/st102/Training/outputs/blue_sand/single_wrap_point_mode_test/waveform.fsdb\""
+RecentFile2 = "\"/home/st102/Training/outputs/blue_sand/free_running_mode_test/waveform.fsdb\""
+RecentFile3 = "\"/home/st102/Training/outputs/blue_sand/base_test/waveform.fsdb\""
 open_file_time_range = FALSE
 legend_window_font = -f COURIER12 -c ID_CYAN5
 value_window_font = -f COURIER12 -c ID_CYAN5
@@ -1345,7 +1350,7 @@ AddImportArgument = FALSE
 LineBreakWithScope = TRUE
 StopAfterCompileOption = -s
 [wave.0]
-viewPort = 0 25 1920 394 227 71
+viewPort = 0 25 1920 438 227 71
 [wave.1]
 viewPort = 127 219 960 332 100 65
 [wave.2]

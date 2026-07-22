@@ -1,0 +1,5 @@
+  CREATE_STREAM @410 {NAME:base_seq T:Transactions SCOPE:uvm_test_top.my_env.agt_apb.seqr0 STREAM:814}
+  CREATE_STREAM @410 {NAME:base_seq T:Transactions SCOPE:uvm_test_top.my_env.agt_apb.seqr0 STREAM:814}
+  CREATE_STREAM @410 {NAME:base_seq T:Transactions SCOPE:uvm_test_top.my_env.agt_apb.seqr0 STREAM:814}
+  CREATE_STREAM @410 {NAME:base_seq T:Transactions SCOPE:uvm_test_top.my_env.agt_apb.seqr0 STREAM:814}
+  CREATE_STREAM @410 {NAME:base_seq T:Transactions SCOPE:uvm_test_top.my_env.agt_apb.seqr0 STREAM:844}

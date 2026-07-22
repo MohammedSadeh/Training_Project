@@ -3,7 +3,7 @@ Command: vcs -f /home/st102/Training/projects/blue_sand/verif/lib/lib.f -o /home
 -timescale=1ns/1ns +vcs+lic+wait +vcs+flush+all -kdb +error+5000 -lca -debug_access+all \
 
                          Chronologic VCS (TM)
-       Version T-2022.06-SP2_Full64 -- Tue Jul 21 13:09:52 2026
+       Version T-2022.06-SP2_Full64 -- Wed Jul 22 13:07:17 2026
 
                     Copyright (c) 1991 - 2022 Synopsys, Inc.
    This software and the associated documentation are proprietary to Synopsys,
@@ -391,6 +391,12 @@ Parsing included file '/home/st102/Training/projects/blue_sand/verif/seq/apb_rea
 Back to file '/home/st102/Training/projects/blue_sand/verif/sv/env_pkg.sv'.
 Parsing included file '/home/st102/Training/projects/blue_sand/verif/seq/base_seq.sv'.
 Back to file '/home/st102/Training/projects/blue_sand/verif/sv/env_pkg.sv'.
+Parsing included file '/home/st102/Training/projects/blue_sand/verif/seq/single_wrap_point_mode_seq.sv'.
+Back to file '/home/st102/Training/projects/blue_sand/verif/sv/env_pkg.sv'.
+Parsing included file '/home/st102/Training/projects/blue_sand/verif/seq/double_wrap_point_mode_seq.sv'.
+Back to file '/home/st102/Training/projects/blue_sand/verif/sv/env_pkg.sv'.
+Parsing included file '/home/st102/Training/projects/blue_sand/verif/seq/special_single_wrap_point_mode_seq.sv'.
+Back to file '/home/st102/Training/projects/blue_sand/verif/sv/env_pkg.sv'.
 Parsing included file '/home/st102/Training/projects/blue_sand/verif/sv/driver_apb.sv'.
 Back to file '/home/st102/Training/projects/blue_sand/verif/sv/env_pkg.sv'.
 Parsing included file '/home/st102/Training/projects/blue_sand/verif/sv/monitor_apb.sv'.
@@ -418,6 +424,10 @@ Parsing included file '/home/st102/Training/projects/blue_sand/verif/tests/reg_a
 Back to file '/home/st102/Training/projects/blue_sand/verif/tests/tests_pkg.sv'.
 Parsing included file '/home/st102/Training/projects/blue_sand/verif/tests/free_running_mode_test.sv'.
 Back to file '/home/st102/Training/projects/blue_sand/verif/tests/tests_pkg.sv'.
+Parsing included file '/home/st102/Training/projects/blue_sand/verif/tests/single_wrap_point_mode_test.sv'.
+Back to file '/home/st102/Training/projects/blue_sand/verif/tests/tests_pkg.sv'.
+Parsing included file '/home/st102/Training/projects/blue_sand/verif/tests/double_wrap_point_mode_test.sv'.
+Back to file '/home/st102/Training/projects/blue_sand/verif/tests/tests_pkg.sv'.
 Parsing design file '/home/st102/Training/projects/blue_sand/verif/tb/wrapper.sv'
 Parsing design file '/home/st102/Training/projects/blue_sand/verif/tb/testbench.sv'
 Top Level Modules:
@@ -429,17 +439,22 @@ Notice: Ports coerced to inout, use -notice for details
 Starting vcs inline pass...
 
 21 modules and 0 UDP read.
+recompiling package vcs_paramclassrepository
+recompiling package uvm_pkg
+recompiling module uvm_custom_install_recording
 recompiling module uvm_custom_install_verdi_recording
 recompiling package env_pkg
-Both modules done.
-	However, due to incremental compilation, only 2 modules need to be compiled. 
+recompiling package tests_pkg
+recompiling module tb_top
+7 of 21 modules done
+	However, due to incremental compilation, only 7 modules need to be compiled. 
 rm -f _cuarc*.so _csrc*.so pre_vcsobj_*.so share_vcsobj_*.so
 if [ -x /home/st102/Training/outputs/blue_sand/simv ]; then chmod a-x /home/st102/Training/outputs/blue_sand/simv; \
 fi
 g++  -o /home/st102/Training/outputs/blue_sand/simv      -rdynamic  -Wl,-rpath='$ORIGIN'/simv.daidir \
 -Wl,-rpath=./simv.daidir -Wl,-rpath=/usr/synopsys/vcs/T-2022.06-SP2/linux64/lib -L/usr/synopsys/vcs/T-2022.06-SP2/linux64/lib \
 -Wl,-rpath-link=./  /usr/lib64/libnuma.so.1 uvm_dpi.o uvm_verdi_dpi.o   objs/amcQw_d.o \
-_25575_archive_1.so _prev_archive_1.so  SIM_l.o      rmapats_mop.o rmapats.o rmar.o \
+_10155_archive_1.so _prev_archive_1.so  SIM_l.o      rmapats_mop.o rmapats.o rmar.o \
 rmar_nd.o  rmar_llvm_0_1.o rmar_llvm_0_0.o            -lvirsim -lerrorinf -lsnpsmalloc \
 -lvfs    -lvcsnew -lsimprofile -luclinative /usr/synopsys/vcs/T-2022.06-SP2/linux64/lib/vcs_tls.o \
 -Wl,-whole-archive  -lvcsucli    -Wl,-no-whole-archive       ./../simv.daidir/vc_hdrs.o \
@@ -447,5 +462,5 @@ _vcs_pli_stub_.o   /usr/synopsys/vcs/T-2022.06-SP2/linux64/lib/vcs_save_restore_
 /usr/synopsys/verdi/T-2022.06-SP2/share/PLI/VCS/LINUX64/pli.a -ldl  -lc -lm -lpthread \
 -ldl 
 /home/st102/Training/outputs/blue_sand/simv up to date
-CPU time: 11.920 seconds to compile + .535 seconds to elab + .712 seconds to link
+CPU time: 15.711 seconds to compile + .455 seconds to elab + .700 seconds to link
 Verdi KDB elaboration done and the database successfully generated: 0 error(s), 0 warning(s)
