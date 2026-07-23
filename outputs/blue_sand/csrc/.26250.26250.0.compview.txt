@@ -1,0 +1,6 @@
+{"vcs1":{"timestamp_begin":1784798510.385320486, "rt":1.34, "ut":1.60, "st":0.19}}
+{"SNPS_VCS_INTERNAL_ROOT_START_TIME": 1784798509.853867360}
+{"VCS_COMP_START_TIME": 1784798509.853867360}
+{"VCS_COMP_END_TIME": 1784798511.791212863}
+{"VCS_USER_OPTIONS": "-f /home/st102/Training/projects/blue_sand/verif/lib/lib.f -o /home/st102/Training/outputs/blue_sand/simv -full64 -sverilog -ntb_opts uvm-1.2 -l /home/st102/Training/outputs/blue_sand/compile.log -timescale=1ns/1ns +vcs+lic+wait +vcs+flush+all -kdb +error+5000 -lca -debug_access+all"}
+{"vcs1": {"peak_mem": 491040}}
